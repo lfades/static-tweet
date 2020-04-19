@@ -8,4 +8,3 @@ node_modules/
 .yarn-integrity
 .env
 .next
-dev.sh

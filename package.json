@@ -13,7 +13,8 @@
   "prettier": {
     "trailingComma": "es5",
     "singleQuote": true,
-    "printWidth": 100
+    "printWidth": 100,
+    "arrowParens": "avoid"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "@zeit/fetch": "^5.2.0",
     "cheerio": "^1.0.0-rc.3",
     "date-fns": "^2.9.0",
+    "dotenv": "^8.2.0",
     "github-slugger": "^1.3.0",
     "mdast-util-to-string": "^1.0.7",
     "next": "^9.3.2",

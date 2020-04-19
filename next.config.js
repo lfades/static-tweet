@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   env: {
     TWITTER_API_TOKEN: process.env.TWITTER_API_TOKEN,
