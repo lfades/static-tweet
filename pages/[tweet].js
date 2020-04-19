@@ -2,9 +2,10 @@ import Link from 'next/link';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
 import fetchTweetAst from '../lib/fetchTweetAst';
-import components from '../components/twitter-layout/components';
-import TweetSkeleton from '../components/twitter-layout/tweet-skeleton';
 import Node from '../components/html/node';
+import TweetSkeleton from '../components/twitter-layout/tweet-skeleton';
+import components from '../components/twitter-layout/components';
+import styles from '../components/twitter-layout/twitter.module.css';
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
 // the user to get the tweet
@@ -25,7 +26,7 @@ export async function getStaticProps({ params }) {
   const url = `https://twitter.com/_/status/${tweet}`;
   const ast = await fetchTweetAst(url);
 
-  return ast ? { props: { ast } } : {};
+  return { props: ast ? { ast } : {} };
 }
 
 export default function Tweet({ date, ast }) {
@@ -36,7 +37,7 @@ export default function Tweet({ date, ast }) {
   }
 
   return (
-    <div className="page">
+    <div className={`page ${styles.twitter}`}>
       {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
       <style jsx>{`
