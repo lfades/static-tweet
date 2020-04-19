@@ -1,7 +1,6 @@
 .zeit {
   --colors-blue: #0c00ff;
   --colors-purple: #f81ce5;
-  --colors-red: #ff0080;
 
   --accents-1: #fafafa;
   --accents-2: #eaeaea;
@@ -24,5 +23,5 @@
   --tweet-link-color: #0366d6;
   --tweet-link-color-hover: #0070f3;
   --tweet-color-gray: #666666;
-  --tweet-color-red: var(--colors-red);
+  --tweet-color-red: #ff0080;
 }
