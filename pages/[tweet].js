@@ -2,8 +2,8 @@ import Link from 'next/link';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
 import fetchTweetAst from '../lib/fetchTweetAst';
-import components from '../components/tweet-page/components';
-import TweetSkeleton from '../components/tweet-page/tweet-skeleton';
+import components from '../components/twitter-layout/components';
+import TweetSkeleton from '../components/twitter-layout/tweet-skeleton';
 import Node from '../components/html/node';
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
