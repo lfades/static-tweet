@@ -5,7 +5,7 @@ import fetchTweetAst from '../lib/fetchTweetAst';
 import Node from '../components/html/node';
 import TweetSkeleton from '../components/twitter-layout/tweet-skeleton';
 import components from '../components/twitter-layout/components';
-import styles from '../components/twitter-layout/twitter.module.css';
+import styles from '../components/zeit-layout/zeit.module.css';
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
 // the user to get the tweet
@@ -37,7 +37,7 @@ export default function Tweet({ date, ast }) {
   }
 
   return (
-    <div className={`page ${styles.twitter}`}>
+    <div className={`page ${styles.zeit}`}>
       {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
       <style jsx>{`
