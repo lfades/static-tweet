@@ -1,5 +1,4 @@
 import { createElement } from 'react';
-import { useLoadTweets } from '../../lib/twitter/hooks';
 import handlers from './handlers';
 
 const defaultHandler = name => (props, components) => {

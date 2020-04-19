@@ -1,5 +1,3 @@
-import { useLoadTwitter } from '../../../lib/twitter/hooks';
-
 export const P = p => (
   <p>
     {p.children}
