@@ -32,7 +32,7 @@ export default function Tweet({ date, ast }) {
   const { isFallback } = useRouter();
 
   if (!isFallback && !ast) {
-    return <Error statusCode={404} />;
+    return <Error statusCode={404} title="This tweet could not be found" />;
   }
 
   return (
