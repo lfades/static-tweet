@@ -4,7 +4,7 @@ export default function Index() {
   return (
     <div>
       <h1>Welcome to static-tweet!</h1>
-      <p>To continue, select a tweet id put in the URL, for example:</p>
+      <p>To continue, add a tweet id to the URL, for example:</p>
       <ul>
         <li>
           <Link href="[tweet]" as="/1241041962871881728">
