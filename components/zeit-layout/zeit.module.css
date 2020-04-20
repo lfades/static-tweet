@@ -1,6 +1,6 @@
 .zeit {
   --colors-blue: #0c00ff;
-  --colors-purple: #f81ce5;
+  --colors-purple: #be00ff;
 
   --accents-1: #fafafa;
   --accents-2: #eaeaea;
@@ -16,12 +16,12 @@
 
   /* Embedded tweet */
   --tweet-font: normal normal 16px/1.4 Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif;
-  --tweet-font-color: #1c2022;
+  --tweet-font-color: #000;
   --tweet-bg-color: #eee;
   --tweet-border: 2px solid var(--accents-3);
   --tweet-border-hover: 2px solid var(--accents-4);
   --tweet-link-color: #0366d6;
   --tweet-link-color-hover: #0070f3;
-  --tweet-color-gray: #666666;
+  --tweet-color-gray: var(--accents-5);
   --tweet-color-red: #ff0080;
 }
