@@ -8,6 +8,7 @@ import components from '../components/twitter-layout/components';
 import zeitTheme from '../components/zeit-layout/zeit.module.css';
 import styles from '../landing.module.css';
 
+const APP_URL = 'https://static-tweet.now.sh';
 const P = components.p;
 const Code = components.code;
 const Ul = components.ul;
@@ -26,22 +27,30 @@ const A = p => (
   </a>
 );
 const Tweet = ({ ast }) => <Node components={components} node={ast[0]} />;
-const RandomTweet = ({ initialHref }) => {
-  const [{ href, loading, error }, setState] = useState({ href: initialHref, loading: false });
-  const fetchTweet = e => {
+const RandomTweet = ({ initialId }) => {
+  const [{ id, loading, error }, setState] = useState({ id: initialId, loading: false });
+  const fetchTweet = async e => {
     e.preventDefault();
-    setState({ loading: true });
+    setState({ id, loading: true });
 
-    setTimeout(() => {
-      setState({ loading: false });
-    }, 2000);
+    const res = await fetch('/api/tweets');
+
+    if (res.ok) {
+      const { tweets } = await res.json();
+      const randomId = tweets[Math.floor(Math.random() * tweets.length)];
+
+      return setState({ id: randomId, loading: false });
+    }
+
+    const error = await getError(res);
+
+    setState({ id, loading: false, error });
   };
+  const href = `${APP_URL}/${id}`;
 
   return (
     <>
-      <A href="https://static-tweet.now.sh/1250630175949086720">
-        https://static-tweet.now.sh/1250630175949086720
-      </A>
+      <A href={href}>{href}</A>
       <div className={styles['generate-tweet']}>
         <button type="button" onClick={fetchTweet}>
           {loading ? (
@@ -55,6 +64,14 @@ const RandomTweet = ({ initialHref }) => {
     </>
   );
 };
+
+async function getError(res) {
+  if (res.headers.get('Content-Type').includes('application/json')) {
+    const data = await res.json();
+    return data.errors[0];
+  }
+  return { message: (await res.text()) || res.statusText };
+}
 
 export async function getStaticProps() {
   const url = 'https://twitter.com/zeithq/status/1249937011068129280';
@@ -88,7 +105,7 @@ export default function Index({ tweet }) {
           </P>
           <img src="/assets/lighthouse-score.png" alt="Very good lighthouse score" />
           <P>To see this in action, try statically rendering your very own tweet it:</P>
-          <RandomTweet initialHref="https://static-tweet.now.sh/1250630175949086720" />
+          <RandomTweet initialId="1250630175949086720" />
           <P>
             How is this possible? The deploy time for this project was{' '}
             <A href="/">
