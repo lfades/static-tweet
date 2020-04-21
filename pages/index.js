@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import fetchTweetAst from '../lib/fetchTweetAst';
@@ -16,8 +16,9 @@ const Li = components.li;
 const H2 = components.h2;
 const Hr = components.hr;
 const Img = components.img;
-const A = p => (
+const A = forwardRef((p, ref) => (
   <a
+    ref={ref}
     href={p.href}
     target="_blank"
     rel="noopener noreferrer"
@@ -26,7 +27,7 @@ const A = p => (
   >
     {p.children}&nbsp;&raquo;
   </a>
-);
+));
 const Tweet = ({ ast, skeleton }) => (
   <div className={styles['tweet-container']}>
     {skeleton ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
@@ -53,7 +54,9 @@ const RandomTweet = ({ initialId }) => {
 
   return (
     <>
-      <A href={href}>{href}</A>
+      <Link href="/[tweet]" as={`/${id}`} passHref>
+        <A>{href}</A>
+      </Link>
       <div className={styles['generate-tweet']}>
         <button
           className={`${styles['generate-tweet-button']} ${loading ? styles['tweet-loading'] : ''}`}
