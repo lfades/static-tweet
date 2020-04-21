@@ -31,7 +31,7 @@
   font-size: 0.875rem;
 }
 
-.generate-tweet > button {
+.generate-tweet-button {
   font-size: 0.875rem;
   text-decoration: underline;
   color: var(--accents-5);
@@ -42,7 +42,12 @@
   margin-top: 0.25rem;
 }
 
-.generate-tweet > button :hover {
+.generate-tweet-button:hover {
+  text-decoration: none;
+}
+
+.generate-tweet-button.tweet-loading {
+  cursor: wait;
   text-decoration: none;
 }
 

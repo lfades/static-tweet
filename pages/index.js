@@ -50,7 +50,11 @@ const RandomTweet = ({ initialId }) => {
     <>
       <A href={href}>{href}</A>
       <div className={styles['generate-tweet']}>
-        <button type="button" onClick={fetchTweet}>
+        <button
+          className={`${styles['generate-tweet-button']} ${loading ? styles['tweet-loading'] : ''}`}
+          type="button"
+          onClick={fetchTweet}
+        >
           {loading ? (
             <i>⏱️ Fetching a random tweet</i>
           ) : (
