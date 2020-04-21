@@ -26,3 +26,27 @@
   text-decoration: none;
   color: var(--tweet-link-color-hover);
 }
+
+.generate-tweet {
+  font-size: 0.875rem;
+}
+
+.generate-tweet > button {
+  font-size: 0.875rem;
+  text-decoration: underline;
+  color: var(--accents-5);
+  background: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 0.25rem;
+}
+
+.generate-tweet > button :hover {
+  text-decoration: none;
+}
+
+.generate-tweet > span {
+  margin-left: 0.5rem;
+  color: #ff1a1a;
+}

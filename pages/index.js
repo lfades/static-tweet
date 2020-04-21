@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import fetchTweetAst from '../lib/fetchTweetAst';
@@ -25,6 +26,35 @@ const A = p => (
   </a>
 );
 const Tweet = ({ ast }) => <Node components={components} node={ast[0]} />;
+const RandomTweet = ({ initialHref }) => {
+  const [{ href, loading, error }, setState] = useState({ href: initialHref, loading: false });
+  const fetchTweet = e => {
+    e.preventDefault();
+    setState({ loading: true });
+
+    setTimeout(() => {
+      setState({ loading: false });
+    }, 2000);
+  };
+
+  return (
+    <>
+      <A href="https://static-tweet.now.sh/1250630175949086720">
+        https://static-tweet.now.sh/1250630175949086720
+      </A>
+      <div className={styles['generate-tweet']}>
+        <button type="button" onClick={fetchTweet}>
+          {loading ? (
+            <i>⏱️ Fetching a random tweet</i>
+          ) : (
+            <>&#x21BA; Click here to get a random tweet</>
+          )}
+        </button>
+        {error && <span>⚠️ Error: {error.message}. Please try again</span>}
+      </div>
+    </>
+  );
+};
 
 export async function getStaticProps() {
   const url = 'https://twitter.com/zeithq/status/1249937011068129280';
@@ -58,9 +88,7 @@ export default function Index({ tweet }) {
           </P>
           <img src="/assets/lighthouse-score.png" alt="Very good lighthouse score" />
           <P>To see this in action, try statically rendering your very own tweet it:</P>
-          <A href="https://static-tweet.now.sh/1250630175949086720">
-            https://static-tweet.now.sh/1250630175949086720
-          </A>
+          <RandomTweet initialHref="https://static-tweet.now.sh/1250630175949086720" />
           <P>
             How is this possible? The deploy time for this project was{' '}
             <A href="/">
