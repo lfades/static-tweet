@@ -22,7 +22,10 @@ export async function getStaticProps() {
 
 export default function Index({ tweet }) {
   return (
-    <Page title="Static Tweet Demo">
+    <Page
+      title="Static Tweet Demo"
+      description="Completely customizable static tweet for Next.js applications"
+    >
       <P>
         This demo shows off the next-gen Static Site Generation capabilities in Next.js. The
         following tweet:
@@ -61,7 +64,7 @@ export default function Index({ tweet }) {
       <Tweet skeleton />
       <P>
         After you refresh that page, you’ll get the static HTML, no matter what edge in the{' '}
-        <A href="/">global network</A> you are visiting.
+        <A href="https://vercel.com/edge-network">global network</A> you are visiting.
       </P>
       <P>
         Because it’s static HTML, if Twitter disappears from the internet, you have strong
