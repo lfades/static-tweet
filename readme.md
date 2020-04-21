@@ -20,7 +20,7 @@ To have full access to all Twitter elements, like videos and polls, you'll need 
 cp .env.example .env
 ```
 
-Once you add your API token to `.env`, it should look like this:
+Then add your API token to `.env`, it should look like this:
 
 ```bash
 TWITTER_API_TOKEN=...
@@ -28,6 +28,6 @@ TWITTER_API_TOKEN=...
 
 For polls, make sure that you have **Tweets and Users** from **Twitter Labs** enabled for your app. It's required to get access to polls metadata.
 
-## Add Static Tweets to Your Project
+## Add Static Tweets to Your App
 
-TODO
+Currently, there's no package to do this, however you're welcome to copy the files and add it to your project!

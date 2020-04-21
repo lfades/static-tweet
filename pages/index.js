@@ -45,12 +45,12 @@ export default function Index({ tweet }) {
       <P>To see this in action, try statically rendering your very own tweet it:</P>
       <RandomTweet initialId="1250630175949086720" />
       <P>
-        How is this possible? The deploy time for this project was{' '}
-        <A href="/">
-          <strong>30 seconds</strong>
+        How is this possible? The deploy time for this project was <strong>30 seconds</strong>. We
+        couldn’t have possibly statically generated all tweets. Each day,{' '}
+        <A href="https://blog.twitter.com/engineering/en_us/a/2013/new-tweets-per-second-record-and-how.html">
+          500M tweets are added
         </A>
-        . We couldn’t have possibly statically generated all tweets. Each day,{' '}
-        <A href="/">500M tweets are added</A>!
+        !
       </P>
       <H2 data={{ id: 'incremental-static-generation' }}>Incremental Static Generation</H2>
       <P>
