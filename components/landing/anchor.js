@@ -1,16 +1,16 @@
 import { forwardRef } from 'react';
 import styles from './anchor.module.css';
 
-const A = forwardRef((p, ref) => (
+const A = forwardRef(({ children, href, title, blank = true }, ref) => (
   <a
     ref={ref}
-    href={p.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={p.title || p.href}
+    href={href}
+    target={blank ? '_blank' : null}
+    rel={blank ? 'noopener noreferrer' : null}
+    title={title || href}
     className={styles.anchor}
   >
-    {p.children}&nbsp;&raquo;
+    {blank ? <>{children}&nbsp;&raquo;</> : children}
   </a>
 ));
 
