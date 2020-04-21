@@ -5,7 +5,7 @@ import fetchTweetAst from '../lib/fetchTweetAst';
 import Node from '../components/html/node';
 import TweetSkeleton from '../components/twitter-layout/tweet-skeleton';
 import components from '../components/twitter-layout/components';
-import zeitTheme from '../components/zeit-layout/zeit.module.css';
+import twitterTheme from '../components/twitter-layout/twitter.module.css';
 import styles from '../landing.module.css';
 
 const APP_URL = 'https://static-tweet.now.sh';
@@ -15,6 +15,7 @@ const Ul = components.ul;
 const Li = components.li;
 const H2 = components.h2;
 const Hr = components.hr;
+const Img = components.img;
 const A = p => (
   <a
     href={p.href}
@@ -23,10 +24,14 @@ const A = p => (
     title={p.title || p.href}
     className={styles.link}
   >
-    {p.children} &raquo;
+    {p.children}&nbsp;&raquo;
   </a>
 );
-const Tweet = ({ ast }) => <Node components={components} node={ast[0]} />;
+const Tweet = ({ ast, skeleton }) => (
+  <div className={styles['tweet-container']}>
+    {skeleton ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
+  </div>
+);
 const RandomTweet = ({ initialId }) => {
   const [{ id, loading, error }, setState] = useState({ id: initialId, loading: false });
   const fetchTweet = async e => {
@@ -95,7 +100,7 @@ export async function getStaticProps() {
 
 export default function Index({ tweet }) {
   return (
-    <div className={`${styles.page} ${zeitTheme.zeit}`}>
+    <div className={`${styles.page} ${twitterTheme.twitter}`}>
       <main className={styles.main}>
         <article className={styles.article}>
           <header>
@@ -116,7 +121,7 @@ export default function Index({ tweet }) {
             That means no Twitter embed <Code className="inline">`{`<iframe>`}`</Code>, no JS, no
             layout and scrolling jumps, no slowness, great SEO, great ligthouse scores:
           </P>
-          <img src="/assets/lighthouse-score.png" alt="Very good lighthouse score" />
+          <Img src="/assets/lighthouse-score.png" alt="Very good lighthouse score" />
           <P>To see this in action, try statically rendering your very own tweet it:</P>
           <RandomTweet initialId="1250630175949086720" />
           <P>
@@ -136,7 +141,7 @@ export default function Index({ tweet }) {
             you’ll notice that if the tweet has never been rendered before, you’ll get a{' '}
             <strong>skeleton page</strong>.
           </P>
-          <TweetSkeleton />
+          <Tweet skeleton />
           <P>
             After you refresh that page, you’ll get the static HTML, no matter what edge in the{' '}
             <A href="/">global network</A> you are visiting.
