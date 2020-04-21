@@ -37,9 +37,7 @@ const RandomTweet = ({ initialId }) => {
 
     if (res.ok) {
       const { tweets } = await res.json();
-      const randomId = tweets[Math.floor(Math.random() * tweets.length)];
-
-      return setState({ id: randomId, loading: false });
+      return setState({ id: getRandomId(id, tweets), loading: false });
     }
 
     const error = await getError(res);
@@ -64,6 +62,17 @@ const RandomTweet = ({ initialId }) => {
     </>
   );
 };
+
+function getRandomId(id, tweets) {
+  let i = 0;
+  while (true) {
+    const randomId = tweets[Math.floor(Math.random() * tweets.length)];
+    if (randomId !== id) return randomId;
+    // Make sure to not create an infinite loop
+    i++;
+    if (i >= tweets.length) return id;
+  }
+}
 
 async function getError(res) {
   if (res.headers.get('Content-Type').includes('application/json')) {
