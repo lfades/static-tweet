@@ -5,6 +5,7 @@
 .random-tweet > span {
   margin-left: 0.5rem;
   color: #ff1a1a;
+  animation: changed 0.5s;
 }
 
 .generate-tweet-button {
@@ -25,4 +26,27 @@
 .generate-tweet-button.tweet-loading {
   cursor: wait;
   text-decoration: none;
+  animation: changed 1s;
+}
+
+.id {
+  animation: updated 1.7s;
+}
+
+@keyframes updated {
+  30% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes changed {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
 }

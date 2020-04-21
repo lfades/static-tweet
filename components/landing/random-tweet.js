@@ -4,6 +4,7 @@ import A from './anchor';
 import styles from './random-tweet.module.css';
 
 const APP_URL = 'https://static-tweet.now.sh';
+const cn = arr => arr.filter(Boolean).join(' ');
 
 function getRandomId(id, tweets) {
   let i = 0;
@@ -25,7 +26,7 @@ async function getError(res) {
 }
 
 export default function RandomTweet({ initialId }) {
-  const [{ id, loading, error }, setState] = useState({ id: initialId, loading: false });
+  const [{ id, loading, error, success }, setState] = useState({ id: initialId, loading: false });
   const fetchTweet = async e => {
     e.preventDefault();
     setState({ id, loading: true });
@@ -34,23 +35,24 @@ export default function RandomTweet({ initialId }) {
 
     if (res.ok) {
       const { tweets } = await res.json();
-      return setState({ id: getRandomId(id, tweets), loading: false });
+      return setState({ id: getRandomId(id, tweets), loading: false, success: true });
     }
 
     const error = await getError(res);
 
     setState({ id, loading: false, error });
   };
-  const href = `${APP_URL}/${id}`;
 
   return (
     <>
       <Link href="/[tweet]" as={`/${id}`} passHref>
-        <A>{href}</A>
+        <A>
+          {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
+        </A>
       </Link>
       <div className={styles['random-tweet']}>
         <button
-          className={`${styles['generate-tweet-button']} ${loading ? styles['tweet-loading'] : ''}`}
+          className={cn([styles['generate-tweet-button'], loading && styles['tweet-loading']])}
           type="button"
           onClick={fetchTweet}
         >
