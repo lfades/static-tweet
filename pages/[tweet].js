@@ -40,12 +40,21 @@ export default function Tweet({ date, ast }) {
     <div className={`page ${styles.zeit}`}>
       {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
+      <footer>
+        <p>🤯 This tweet was statically generated.</p>
+      </footer>
+
       <style jsx>{`
         .page {
           width: 500px;
           max-width: 100%;
           margin: 0 auto;
           padding: 2rem 0;
+        }
+        footer {
+          font-size: 0.875rem;
+          text-align: center;
+          margin-top: -0.5rem;
         }
       `}</style>
     </div>

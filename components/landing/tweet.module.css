@@ -1,0 +1,11 @@
+.tweet {
+  max-width: 500px;
+  min-width: 220px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .tweet {
+    max-width: 300px;
+  }
+}
