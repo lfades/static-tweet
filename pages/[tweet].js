@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Error from 'next/error';
 import { useRouter } from 'next/router';
 import fetchTweetAst from '../lib/fetchTweetAst';
+import A from '../components/landing/anchor';
 import Node from '../components/html/node';
 import TweetSkeleton from '../components/twitter-layout/tweet-skeleton';
 import components from '../components/twitter-layout/components';
@@ -40,12 +41,28 @@ export default function Tweet({ date, ast }) {
     <div className={`page ${styles.zeit}`}>
       {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
+      <footer>
+        <p>
+          {isFallback
+            ? '🤯 This tweet is statically generating.'
+            : '🤯 This tweet was statically generated.'}{' '}
+          <Link href="/" passHref>
+            <A blank={false}>Learn more</A>
+          </Link>
+        </p>
+      </footer>
+
       <style jsx>{`
         .page {
           width: 500px;
           max-width: 100%;
           margin: 0 auto;
           padding: 2rem 0;
+        }
+        footer {
+          font-size: 0.875rem;
+          text-align: center;
+          margin-top: -0.5rem;
         }
       `}</style>
     </div>

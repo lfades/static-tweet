@@ -20,8 +20,8 @@
   --tweet-bg-color: #eee;
   --tweet-border: 2px solid var(--accents-3);
   --tweet-border-hover: 2px solid var(--accents-4);
-  --tweet-link-color: #0366d6;
-  --tweet-link-color-hover: #0070f3;
-  --tweet-color-gray: var(--accents-5);
-  --tweet-color-red: #ff0080;
+  --tweet-link-color: #2b7bb9;
+  --tweet-link-color-hover: #3b94d9;
+  --tweet-color-gray: #697882;
+  --tweet-color-red: #e02460;
 }

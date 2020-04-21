@@ -27,3 +27,7 @@ TWITTER_API_TOKEN=...
 ```
 
 For polls, make sure that you have **Tweets and Users** from **Twitter Labs** enabled for your app. It's required to get access to polls metadata.
+
+## Add Static Tweets to Your Project
+
+TODO
