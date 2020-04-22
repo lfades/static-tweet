@@ -46,7 +46,7 @@ export default function RandomTweet({ initialId }) {
   return (
     <>
       <Link href="/[tweet]" as={`/${id}`} passHref>
-        <A>
+        <A blank={false}>
           {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
         </A>
       </Link>
@@ -57,7 +57,9 @@ export default function RandomTweet({ initialId }) {
           onClick={fetchTweet}
         >
           {loading ? (
-            <i>⏱️ Fetching a random tweet</i>
+            <>
+              ⏱<i> Fetching a random tweet</i>
+            </>
           ) : (
             <>&#x21BA; Click here to get a random tweet</>
           )}

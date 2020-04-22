@@ -99,7 +99,8 @@ export default function Index({ tweet }) {
         </Li>
         <Li>
           <A href="https://nextjs.org/docs/basic-features/data-fetching">Next.js documentation</A>{' '}
-          for `getStaticProps` and `getStaticPaths
+          for <Code className="inline">`getStaticProps`</Code> and{' '}
+          <Code className="inline">`getStaticPaths`</Code>
         </Li>
         <Li>
           Get started{' '}

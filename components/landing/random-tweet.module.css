@@ -9,6 +9,7 @@
 }
 
 .generate-tweet-button {
+  height: 1rem;
   font-size: 0.875rem;
   text-decoration: underline;
   color: var(--accents-5);
