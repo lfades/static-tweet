@@ -67,6 +67,15 @@ export default {
       );
     }
 
+    if (type === 'hashtag') {
+      const { Hashtag } = components;
+      return (
+        <Hashtag key={i} href={props.href}>
+          {props.children}
+        </Hashtag>
+      );
+    }
+
     if (type === 'cashtag') {
       const { Cashtag } = components;
       return (

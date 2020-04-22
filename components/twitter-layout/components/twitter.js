@@ -27,6 +27,12 @@ export const Mention = p => (
   </TwitterLink>
 );
 
+export const Hashtag = p => (
+  <TwitterLink href={p.href} type="#">
+    {p.children[0].replace(/^\#/, '')}
+  </TwitterLink>
+);
+
 export const Cashtag = p => (
   <TwitterLink href={p.href} type="$">
     {p.children[0].replace(/^\$/, '')}
