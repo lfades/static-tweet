@@ -41,7 +41,9 @@ export default function Index({ tweet }) {
         That means no Twitter embed <Code className="inline">`{`<iframe>`}`</Code>, no JS, no layout
         and scrolling jumps, no slowness, great SEO, great ligthouse scores:
       </P>
-      <Img src="/assets/lighthouse-score-01.png" alt="Very good lighthouse score" />
+      <div style={{ maxHeight: '215px' }}>
+        <Img src="/assets/lighthouse-score-01.png" alt="Very good lighthouse score" />
+      </div>
       <P>To see this in action, try statically rendering your very own tweet it:</P>
       <RandomTweet initialId="1250630175949086720" />
       <P>
