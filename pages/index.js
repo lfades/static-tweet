@@ -42,7 +42,7 @@ export default function Index({ tweet }) {
         and scrolling jumps, no slowness, great SEO, great ligthouse scores:
       </P>
       <div style={{ height: '215px' }}>
-        <Img src="/assets/lighthouse-score-01.png" alt="Very good lighthouse score" />
+        <Img src="/assets/lighthouse-score-01.png" />
       </div>
       <P>To see this in action, try statically rendering your very own tweet it:</P>
       <RandomTweet initialId="1250630175949086720" />
