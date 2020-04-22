@@ -24,6 +24,8 @@ export async function getStaticProps({ params }) {
     return { props: {} };
   }
 
+  await new Promise(resolve => setTimeout(resolve, 5000));
+
   const url = `https://twitter.com/_/status/${tweet}`;
   const ast = await fetchTweetAst(url);
 
