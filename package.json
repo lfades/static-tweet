@@ -47,5 +47,8 @@
     "remark-rehype": "^5.0.0",
     "unified": "^8.4.2",
     "unist-util-visit": "^2.0.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
   }
 }
