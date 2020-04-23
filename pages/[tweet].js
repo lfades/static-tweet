@@ -5,6 +5,7 @@ import fetchTweetAst from '../lib/fetchTweetAst';
 import A from '../components/landing/anchor';
 import Node from '../components/html/node';
 import TweetSkeleton from '../components/twitter-layout/tweet-skeleton';
+import TweetMeta from '../components/twitter-layout/tweet-meta';
 import components from '../components/twitter-layout/components';
 import styles from '../components/dark-layout/dark.module.css';
 
@@ -39,7 +40,9 @@ export default function Tweet({ date, ast }) {
 
   return (
     <div className={`page-wrapper ${styles.theme}`}>
-      <div className="page">
+      <TweetMeta />
+
+      <main>
         {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
         <footer>
@@ -48,11 +51,11 @@ export default function Tweet({ date, ast }) {
               ? '🤯 This tweet is statically generating.'
               : '🤯 This tweet was statically generated.'}{' '}
             <Link href="/" passHref>
-              <A blank={false}>Learn more</A>
+              <A blank={false}>See how</A>
             </Link>
           </p>
         </footer>
-      </div>
+      </main>
 
       <style jsx>{`
         .page-wrapper {
@@ -61,7 +64,7 @@ export default function Tweet({ date, ast }) {
           height: 100vh;
           padding: 2rem 1rem;
         }
-        .page {
+        main {
           width: 500px;
           max-width: 100%;
           margin: 0 auto;
