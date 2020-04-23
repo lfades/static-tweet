@@ -11,6 +11,7 @@
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 1rem;
   justify-content: center;
+  margin: 3.5rem 0;
 }
 
 @media (max-width: 580px) {
