@@ -4,7 +4,6 @@ import Page from '../components/landing/page';
 import A from '../components/landing/anchor';
 import Tweet from '../components/landing/tweet';
 import RandomTweet from '../components/landing/random-tweet';
-import twitterTheme from '../components/twitter-layout/twitter.module.css';
 
 const P = components.p;
 const Code = components.code;
@@ -31,9 +30,7 @@ export default function Index({ tweet }) {
         This demo shows off the next-gen Static Site Generation capabilities in Next.js. The
         following tweet:
       </P>
-      <div className={twitterTheme.twitter}>
-        <Tweet ast={tweet} />
-      </div>
+      <Tweet ast={tweet} />
       <P>
         was inlined into the HTML of this page (<Code className="inline">`pages/index.js`</Code>) by
         using <Code className="inline">`getStaticProps`</Code> in your Next.js page (

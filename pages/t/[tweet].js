@@ -38,7 +38,7 @@ export default function Tweet({ date, ast }) {
   }
 
   return (
-    <div className={`page ${styles.twitter}`}>
+    <div className={`page ${styles.theme}`}>
       {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
       <footer>

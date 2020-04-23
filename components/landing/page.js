@@ -5,7 +5,7 @@ import styles from './page.module.css';
 
 export default function Page({ children, title, description }) {
   return (
-    <div className={`${styles.page} ${twitterTheme.twitter} ${styles.theme}`}>
+    <div className={`${styles.page} ${twitterTheme.theme} ${styles.theme}`}>
       <Head>
         <title>{title}</title>
         <meta name="Description" content={description} />
