@@ -26,9 +26,15 @@ export async function getStaticProps({ params }) {
   }
 
   const url = `https://twitter.com/_/status/${tweet}`;
-  const ast = await fetchTweetAst(url);
 
-  return { props: ast ? { ast } : {} };
+  try {
+    const ast = await fetchTweetAst(url);
+    return { props: ast ? { ast } : {} };
+  } catch (error) {
+    // The Twitter API most likely died
+    console.error(error);
+    return { props: {} };
+  }
 }
 
 export default function Tweet({ date, ast }) {
