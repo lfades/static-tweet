@@ -3,7 +3,7 @@ export const Ul = p => (
     <ul {...p} />
     <style jsx>{`
       ul {
-        margin: 1.25rem 0;
+        margin: var(--text-margin-y) 0;
         list-style-type: none;
         padding-left: 1rem;
       }
@@ -22,7 +22,7 @@ export const Ol = p => (
     <ol {...p} />
     <style jsx>{`
       ol {
-        margin: 1.25rem 0;
+        margin: var(--text-margin-y) 0;
         padding-left: 1rem;
       }
     `}</style>

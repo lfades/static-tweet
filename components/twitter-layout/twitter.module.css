@@ -14,6 +14,8 @@
   --code-color: #9efeff;
   --code-bg-color: #1e1e3f;
 
+  --text-margin-y: 1.25rem;
+
   /* Embedded tweet */
   --tweet-font: normal normal 16px/1.4 Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif;
   --tweet-font-color: #1c2022;

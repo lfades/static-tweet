@@ -3,7 +3,7 @@ export const P = p => (
     {p.children}
     <style jsx>{`
       p {
-        margin: 1.25rem 0;
+        margin: var(--text-margin-y) 0;
         white-space: pre-wrap;
         word-wrap: break-word;
       }
@@ -33,7 +33,7 @@ export const Hr = p => (
       hr {
         border: 0;
         border-top: 1px solid var(--accents-2);
-        margin: 1.25rem 0;
+        margin: var(--text-margin-y) 0;
       }
     `}</style>
   </>
