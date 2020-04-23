@@ -1,13 +1,14 @@
-.zeit {
+.theme {
   --colors-blue: #0c00ff;
   --colors-purple: #be00ff;
 
-  --accents-1: #fafafa;
-  --accents-2: #eaeaea;
-  --accents-3: #999999;
-  --accents-4: #888888;
-  --accents-5: #666666;
+  --accents-1: #111111;
+  --accents-2: #333333;
+  --accents-3: #444444;
+  --accents-4: #666666;
+  --accents-5: #888888;
 
+  --bg-color: #000;
   --link-color: var(--colors-blue);
   --poll-bar-color: var(--colors-blue);
   --inline-code-color: var(--colors-purple);
@@ -23,12 +24,20 @@
 
   /* Embedded tweet */
   --tweet-font: normal normal 16px/1.4 Helvetica, Roboto, 'Segoe UI', Calibri, sans-serif;
-  --tweet-font-color: #000;
-  --tweet-bg-color: #eee;
-  --tweet-border: 2px solid var(--accents-3);
-  --tweet-border-hover: 2px solid var(--accents-4);
+  --tweet-font-color: #fff;
+  --tweet-bg-color: #000;
+  --tweet-border: 1px solid var(--accents-2);
+  --tweet-border-hover: var(--tweet-border);
   --tweet-link-color: #2b7bb9;
   --tweet-link-color-hover: #3b94d9;
-  --tweet-color-gray: #697882;
+  --tweet-color-gray: var(--accents-4);
   --tweet-color-red: #e02460;
+}
+
+.theme :global(.avatar) > img {
+  border: var(--tweet-border);
+}
+
+.theme :global(.tweet:hover) {
+  box-shadow: 0 0 0 1px var(--accents-2);
 }

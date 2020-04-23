@@ -1,11 +1,34 @@
 .tweet {
+  display: flex;
+  flex-direction: column;
   max-width: 500px;
   min-width: 220px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 @media (max-width: 600px) {
   .tweet {
     max-width: 300px;
   }
+}
+
+.button {
+  color: var(--tweet-font-color);
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  border: var(--tweet-border);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  align-self: center;
+}
+
+.button:hover {
+  border: var(--tweet-border-hover);
+}
+
+.dark-button:hover {
+  box-shadow: 0 0 0 1px var(--accents-2);
 }

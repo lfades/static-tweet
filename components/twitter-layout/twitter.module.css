@@ -1,4 +1,4 @@
-.twitter {
+.theme {
   --colors-blue: #0c00ff;
   --colors-purple: #be00ff;
 
@@ -8,6 +8,7 @@
   --accents-4: #888888;
   --accents-5: #666666;
 
+  --bg-color: #fff;
   --link-color: var(--colors-blue);
   --poll-bar-color: var(--colors-blue);
   --inline-code-color: var(--colors-purple);
