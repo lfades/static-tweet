@@ -5,9 +5,9 @@ import fetchTweetAst from '../../lib/fetchTweetAst';
 import A from '../../components/landing/anchor';
 import Node from '../../components/html/node';
 import TweetSkeleton from '../../components/twitter-layout/tweet-skeleton';
-import TweetMeta from '../../components/twitter-layout/tweet-meta';
 import components from '../../components/twitter-layout/components';
 import styles from '../../components/twitter-layout/twitter.module.css';
+import TweetMeta from '../../components/tweet-meta';
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
 // the user to get the tweet
