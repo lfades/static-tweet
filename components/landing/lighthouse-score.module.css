@@ -1,5 +1,4 @@
 .score {
-  --score-container-padding: 1rem;
   --gauge-circle-size: 80px;
   --circle-background: #0cce6b;
   --circle-border-width: 8;
@@ -8,8 +7,16 @@
   --gauge-label-font-size: 1.25rem;
   --color-pass: #0cce6b;
 
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 580px) {
+  .score {
+    grid-template-columns: repeat(auto-fit, minmax(180px, max-content));
+  }
 }
 
 .gauge {
@@ -18,7 +25,6 @@
   align-items: center;
   flex-direction: column;
   text-decoration: none;
-  padding: var(--score-container-padding);
   contain: content;
   will-change: opacity;
 }
@@ -61,7 +67,7 @@
   font-size: calc(var(--gauge-circle-size) * 0.34 + 1.3px);
   line-height: 0;
   text-align: center;
-  top: calc(var(--score-container-padding) + var(--gauge-circle-size) / 2);
+  top: calc(var(--gauge-circle-size) / 2);
 }
 
 .gauge-label {
