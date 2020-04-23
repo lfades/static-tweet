@@ -14,7 +14,7 @@ const H2 = components.h2;
 const Hr = components.hr;
 
 export async function getStaticProps() {
-  const url = 'https://twitter.com/zeithq/status/1253411282608205826';
+  const url = 'https://twitter.com/zeithq/status/1249937011068129280';
   const tweet = await fetchTweetAst(url);
 
   return { props: { tweet } };
@@ -48,7 +48,7 @@ export default function Index({ tweet }) {
         <Gauge score={100} text="SEO" />
       </Score>
       <P>To see this in action, try statically rendering your very own tweet it:</P>
-      <RandomTweet initialId="1250630175949086720" />
+      <RandomTweet initialId="1253411282608205826" />
       <P>
         How is this possible? The deploy time for this project was <strong>30 seconds</strong>. We
         couldn’t have possibly statically generated all tweets. Each day,{' '}
