@@ -35,7 +35,7 @@ export const Li = p => (
     <style jsx>{`
       li {
         padding-left: 0;
-        margin-bottom: 0.5rem;
+        margin: var(--li-margin);
       }
     `}</style>
   </>
