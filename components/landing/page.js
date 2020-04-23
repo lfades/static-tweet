@@ -1,16 +1,26 @@
+import React from 'react';
 import Head from 'next/head';
-// The landing page uses most of the styles from the Twitter theme
 import twitterTheme from '../twitter-layout/twitter.module.css';
+import darkTheme from '../dark-layout/dark.module.css';
 import styles from './page.module.css';
 
-export default function Page({ children, title, description }) {
-  return (
-    <div className={`${styles.page} ${twitterTheme.theme} ${styles.theme}`}>
-      <Head>
-        <title>{title}</title>
-        <meta name="Description" content={description} />
-      </Head>
+const Theme = React.createContext();
 
+export const useTheme = () => React.useContext(Theme);
+
+export function ThemeProvider({ theme, children }) {
+  const [val, setTheme] = React.useState(theme);
+  return <Theme.Provider value={[val, setTheme]}>{children}</Theme.Provider>;
+}
+
+function PageContent({ title, children }) {
+  const [theme] = useTheme();
+  return (
+    <div
+      className={`${styles.page} ${theme === 'light' ? twitterTheme.theme : darkTheme.theme} ${
+        styles.theme
+      }`}
+    >
       <main className={styles.main}>
         <article className={styles.article}>
           <header>
@@ -20,5 +30,17 @@ export default function Page({ children, title, description }) {
         </article>
       </main>
     </div>
+  );
+}
+
+export default function Page({ children, title, description }) {
+  return (
+    <ThemeProvider theme="light">
+      <Head>
+        <title>{title}</title>
+        <meta name="Description" content={description} />
+      </Head>
+      <PageContent title={title}>{children}</PageContent>
+    </ThemeProvider>
   );
 }

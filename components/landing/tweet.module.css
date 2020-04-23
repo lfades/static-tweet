@@ -1,18 +1,9 @@
-.background {
-  background: #fff;
-  padding: 2rem 0;
-}
-
-.background.dark-bg {
-  background: #111;
-}
-
 .tweet {
   display: flex;
   flex-direction: column;
   max-width: 500px;
   min-width: 220px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 @media (max-width: 600px) {
@@ -25,6 +16,7 @@
   color: var(--tweet-font-color);
   font-size: 0.875rem;
   padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
   background: transparent;
   border: var(--tweet-border);
   border-radius: 5px;
@@ -37,12 +29,6 @@
   border: var(--tweet-border-hover);
 }
 
-.dark-button {
-  color: var(--tweet-font-color);
-  background: transparent;
-  outline: none;
-}
-
 .dark-button:hover {
-  box-shadow: 0 0 0 1px #333;
+  box-shadow: 0 0 0 1px var(--accents-2);
 }

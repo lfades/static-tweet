@@ -1,4 +1,6 @@
 .page {
+  color: var(--tweet-font-color);
+  background: var(--bg-color);
   padding: 0.625rem;
 }
 

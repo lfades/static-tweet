@@ -13,7 +13,7 @@
   font-size: 0.875rem;
   text-decoration: underline;
   color: var(--accents-5);
-  background: #fff;
+  background: transparent;
   cursor: pointer;
   border: none;
   outline: none;

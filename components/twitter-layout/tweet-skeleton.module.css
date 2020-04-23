@@ -1,4 +1,5 @@
 .container {
+  background: var(--tweet-bg-color);
   border: var(--tweet-border);
   border-radius: 5px;
   margin: var(--container-margin);
