@@ -85,7 +85,7 @@ export const Poll = ({ data }) => {
 
       <style jsx>{`
         .poll {
-          margin: 1.5rem 1rem;
+          margin: var(--poll-margin);
         }
         .options {
           display: grid;

@@ -2,6 +2,15 @@
   padding: 0.625rem;
 }
 
+/* Replace some variables from the theme used by the components */
+.page.theme {
+  --text-margin: 2rem 0;
+  --poll-margin: 2.5rem 1rem;
+  --heading-margin-top: 4rem;
+  --heading-margin-bottom: 2.5rem;
+  --li-margin: 0 0 1rem 0;
+}
+
 .main {
   margin: 0 auto;
   max-width: 42rem;
@@ -15,5 +24,5 @@
 
 .article > header > h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--heading-margin-bottom);
 }
