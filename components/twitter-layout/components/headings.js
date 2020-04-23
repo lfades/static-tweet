@@ -3,7 +3,7 @@ import css from 'styled-jsx/css';
 const { className, styles } = css.resolve`
    {
     font-weight: 600;
-    margin: 3.5rem 0 2rem 0;
+    margin: var(--heading-margin);
   }
 `;
 
