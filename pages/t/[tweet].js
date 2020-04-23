@@ -38,26 +38,32 @@ export default function Tweet({ date, ast }) {
   }
 
   return (
-    <div className={`page ${styles.theme}`}>
-      {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
+    <div className={`page-wrapper ${styles.theme}`}>
+      <div className="page">
+        {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
-      <footer>
-        <p>
-          {isFallback
-            ? '🤯 This tweet is statically generating.'
-            : '🤯 This tweet was statically generated.'}{' '}
-          <Link href="/" passHref>
-            <A blank={false}>Learn more</A>
-          </Link>
-        </p>
-      </footer>
-
+        <footer>
+          <p>
+            {isFallback
+              ? '🤯 This tweet is statically generating.'
+              : '🤯 This tweet was statically generated.'}{' '}
+            <Link href="/" passHref>
+              <A blank={false}>Learn more</A>
+            </Link>
+          </p>
+        </footer>
+      </div>
       <style jsx>{`
+        .page-wrapper {
+          color: var(--tweet-font-color);
+          background: var(--bg-color);
+          height: 100vh;
+          padding: 2rem 1rem;
+        }
         .page {
           width: 500px;
           max-width: 100%;
           margin: 0 auto;
-          padding: 2rem 0;
         }
         footer {
           font-size: 0.875rem;
