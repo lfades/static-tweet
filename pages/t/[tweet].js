@@ -51,7 +51,7 @@ export default function Tweet({ date, ast }) {
               ? '🤯 This tweet is statically generating.'
               : '🤯 This tweet was statically generated.'}{' '}
             <Link href="/" passHref>
-              <A blank={false}>Learn more</A>
+              <A blank={false}>See how</A>
             </Link>
           </p>
         </footer>
