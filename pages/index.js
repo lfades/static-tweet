@@ -12,7 +12,6 @@ const Ul = components.ul;
 const Li = components.li;
 const H2 = components.h2;
 const Hr = components.hr;
-const Img = components.img;
 
 export async function getStaticProps() {
   const url = 'https://twitter.com/zeithq/status/1249937011068129280';
