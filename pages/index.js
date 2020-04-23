@@ -14,7 +14,7 @@ const H2 = components.h2;
 const Hr = components.hr;
 
 export async function getStaticProps() {
-  const url = 'https://twitter.com/zeithq/status/1249937011068129280';
+  const url = 'https://twitter.com/zeithq/status/1253411282608205826';
   const tweet = await fetchTweetAst(url);
 
   return { props: { tweet } };
