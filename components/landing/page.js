@@ -38,7 +38,12 @@ export default function Page({ children, title, description }) {
     <ThemeProvider theme="light">
       <Head>
         <title>{title}</title>
-        <meta name="Description" content={description} />
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content="Static Tweet Next.js Demo" />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="/assets/twitter-card.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <PageContent title={title}>{children}</PageContent>
     </ThemeProvider>

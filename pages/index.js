@@ -4,6 +4,7 @@ import Page from '../components/landing/page';
 import A from '../components/landing/anchor';
 import Tweet from '../components/landing/tweet';
 import RandomTweet from '../components/landing/random-tweet';
+import { Score, Gauge } from '../components/landing/lighthouse-score';
 
 const P = components.p;
 const Code = components.code;
@@ -23,7 +24,7 @@ export async function getStaticProps() {
 export default function Index({ tweet }) {
   return (
     <Page
-      title="Static Tweet Demo"
+      title="Static Tweet Next.js Demo"
       description="Completely customizable static tweet for Next.js applications"
     >
       <P>
@@ -41,7 +42,12 @@ export default function Index({ tweet }) {
         That means no Twitter embed <Code className="inline">`{`<iframe>`}`</Code>, no JS, no layout
         and scrolling jumps, no slowness, great SEO, great lighthouse scores:
       </P>
-      <Img width={1996} height={668} src="/assets/lighthouse-score-01.png" />
+      <Score>
+        <Gauge score={98} text="Performance" />
+        <Gauge score={93} text="Accessibility" />
+        <Gauge score={100} text="Best Practices" />
+        <Gauge score={100} text="SEO" />
+      </Score>
       <P>To see this in action, try statically rendering your very own tweet it:</P>
       <RandomTweet initialId="1250630175949086720" />
       <P>

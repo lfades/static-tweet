@@ -5,6 +5,7 @@ import fetchTweetAst from '../../lib/fetchTweetAst';
 import A from '../../components/landing/anchor';
 import Node from '../../components/html/node';
 import TweetSkeleton from '../../components/twitter-layout/tweet-skeleton';
+import TweetMeta from '../../components/twitter-layout/tweet-meta';
 import components from '../../components/twitter-layout/components';
 import styles from '../../components/twitter-layout/twitter.module.css';
 
@@ -39,7 +40,9 @@ export default function Tweet({ date, ast }) {
 
   return (
     <div className={`page-wrapper ${styles.theme}`}>
-      <div className="page">
+      <TweetMeta />
+
+      <main>
         {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
         <footer>
@@ -52,7 +55,8 @@ export default function Tweet({ date, ast }) {
             </Link>
           </p>
         </footer>
-      </div>
+      </main>
+
       <style jsx>{`
         .page-wrapper {
           color: var(--tweet-font-color);
@@ -60,7 +64,7 @@ export default function Tweet({ date, ast }) {
           height: 100vh;
           padding: 2rem 1rem;
         }
-        .page {
+        main {
           width: 500px;
           max-width: 100%;
           margin: 0 auto;
