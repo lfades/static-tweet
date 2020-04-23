@@ -9,8 +9,14 @@ export default async function getTweets(req, res) {
     return res.status(405).end();
   }
 
+  if (!process.env.TWITTER_API_TOKEN) {
+    return res.status(401).json({
+      errors: [{ message: 'A Twitter API token is required to execute this request' }],
+    });
+  }
+
   const response = await fetch(
-    `https://api.twitter.com/1.1/search/tweets.json?q=${QUERY}&lang=${LANG}&count=30`,
+    `https://api.twitter.com/1.1/search/tweets.json?q=${QUERY}&lang=${LANG}&count=50`,
     {
       headers: {
         authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,

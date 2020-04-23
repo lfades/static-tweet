@@ -25,7 +25,7 @@ export default function Index({ tweet }) {
   return (
     <Page
       title="Static Tweet Next.js Demo"
-      description="Completely customizable static tweet for Next.js applications"
+      description="A demo showing off ahead-of-time and incremental static generation by using Tweets as the datasource"
     >
       <P>
         This demo shows off the next-gen Static Site Generation capabilities in Next.js. The
