@@ -31,3 +31,5 @@ For polls, make sure that you have **Tweets and Users** from **Twitter Labs** en
 ## Add Static Tweets to Your App
 
 Currently, there's no package to do this, however you're welcome to copy the files and add it to your project!
+
+For an example, take a look at the following blog: [rauchg/blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js)
