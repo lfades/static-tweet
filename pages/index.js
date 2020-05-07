@@ -108,6 +108,12 @@ export default function Index({ tweet }) {
           <Code className="inline">`getStaticPaths`</Code>
         </Li>
         <Li>
+          Learn about our RFC for{' '}
+          <A href="https://github.com/zeit/next.js/discussions/11552">
+            incrementally updating existing pages
+          </A>
+        </Li>
+        <Li>
           Get started{' '}
           <A href="https://nextjs.org/learn/basics/create-nextjs-app">
             learning Next.js from scratch
