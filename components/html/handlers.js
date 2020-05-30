@@ -86,7 +86,7 @@ export default {
     );
   },
   blockquote(props, components, i) {
-    if (process.env.TWITTER_LOAD_WIDGETS) {
+    if (process.env.NEXT_PUBLIC_TWITTER_LOAD_WIDGETS) {
       const isEmbeddedTweet = props.className?.includes('twitter-tweet');
 
       if (isEmbeddedTweet) {

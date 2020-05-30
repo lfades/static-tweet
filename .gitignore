@@ -6,5 +6,5 @@ yarn-error.log*
 node_modules/
 
 .yarn-integrity
-.env
 .next
+.env*.local
