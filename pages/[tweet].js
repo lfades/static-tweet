@@ -68,7 +68,7 @@ export default function Tweet({ date, ast }) {
           color: var(--tweet-font-color);
           background: var(--bg-color);
           height: 100vh;
-          overflow: scroll;
+          overflow: auto;
           padding: 2rem 1rem;
         }
         main {
