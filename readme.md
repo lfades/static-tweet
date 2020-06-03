@@ -14,13 +14,13 @@ To have a working copy of this project, run the following command:
 yarn create next-app static-tweet --example https://github.com/lfades/static-tweet/tree/master
 ```
 
-To have full access to all Twitter elements, like videos and polls, you'll need a Twitter API Token, once you have it, copy the [`.env.example`](.env.example) file in the root directory to `.env` (which will be ignored by Git):
+To have full access to all Twitter elements, like videos and polls, you'll need a Twitter API Token, once you have it, copy the [`.env.local.example`](.env.local.example) file in the root directory to `.env.local` (which will be ignored by Git):
 
 ```bash
-cp .env.example .env
+cp .env.local.example .env.local
 ```
 
-Then add your API token to `.env`, it should look like this:
+Then add your API token to `.env.local`, it should look like this:
 
 ```bash
 TWITTER_API_TOKEN=...

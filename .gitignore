@@ -6,5 +6,8 @@ yarn-error.log*
 node_modules/
 
 .yarn-integrity
-.env
 .next
+.env*.local
+
+# Used for local testing
+test_ids.txt
