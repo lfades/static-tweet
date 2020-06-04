@@ -1,4 +1,7 @@
 {
+  "env": {
+    "TWITTER_API_TOKEN": "@twitter-api-token"
+  },
   "build": {
     "env": {
       "TWITTER_API_TOKEN": "@twitter-api-token"
