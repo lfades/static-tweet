@@ -47,7 +47,16 @@ export default function Tweet({ date, ast }) {
       <TweetMeta />
 
       <main>
-        {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
+        {isFallback ? 
+          <>
+            <TweetSkeleton />
+            <noscript>
+              <meta httpEquiv="refresh" content="5" />
+            </noscript>
+          </>
+          : 
+          <Node components={components} node={ast[0]} />
+        }
 
         <footer>
           <p>
