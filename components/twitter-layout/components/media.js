@@ -1,16 +1,17 @@
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 const LoadDetailsDialog = dynamic(() => import('../details-dialog'), { ssr: false });
 
 export const Img = ({ width, height, src, ...p }) => (
   <details>
     <summary>
-      <img {...p} src={`${src}&name=small`} />
+      <Image {...p} src={`${src}&name=small`} layout="fill" quality={80} />
     </summary>
 
     <details-dialog>
       <div className="bg" data-close-dialog />
-      <img {...p} className="large-photo" src={`${src}&name=large`} />
+      <Image {...p} src={`${src}&name=large`} width={width} height={height} />
     </details-dialog>
 
     <LoadDetailsDialog />
@@ -44,11 +45,6 @@ export const Img = ({ width, height, src, ...p }) => (
         max-height: 100vh;
         object-fit: cover;
         cursor: pointer;
-      }
-      .large-photo {
-        width: auto;
-        max-width: 100%;
-        max-height: 100%;
       }
       :global(details-dialog) {
         position: fixed;
