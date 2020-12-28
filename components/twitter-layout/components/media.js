@@ -18,6 +18,7 @@ export const Img = ({ width, height, src, ...p }) => (
     <style jsx>{`
       summary {
         position: relative;
+        box-sizing: border-box;
         padding-bottom: ${(height / width) * 100 || 0}%;
       }
       summary > img {
