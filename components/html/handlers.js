@@ -40,17 +40,15 @@ export default {
       </Div>
     );
   },
-  img(props, components, i) {
-    const type = props.dataType;
-
-    if (type === 'emoji-for-text') {
+  img({ dataType, ...props }, components, i) {
+    if (dataType === 'emoji-for-text') {
       const { Emoji } = components;
       return <Emoji key={i} src={props.src} alt={props.alt} />;
     }
 
-    if (type === 'media-image') {
+    if (dataType === 'media-image') {
       const Img = components.img;
-      return <Img key={i} src={props.src} alt={props.alt} />;
+      return <Img key={i} {...props} />;
     }
 
     return null;
