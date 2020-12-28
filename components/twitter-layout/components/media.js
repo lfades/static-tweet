@@ -6,7 +6,7 @@ const LoadDetailsDialog = dynamic(() => import('../details-dialog'), { ssr: fals
 export const Img = ({ width, height, src, ...p }) => (
   <details>
     <summary>
-      <Image {...p} src={`${src}&name=small`} layout="fill" quality={80} />
+      <Image {...p} src={`${src}&name=small`} layout="fill" objectFit="cover" quality={80} />
     </summary>
 
     <details-dialog>
@@ -22,9 +22,6 @@ export const Img = ({ width, height, src, ...p }) => (
         box-sizing: border-box;
         padding-bottom: ${(height / width) * 100 || 0}%;
       }
-      summary > img {
-        position: ${height && width ? 'absolute' : 'static'};
-      }
     `}</style>
     <style jsx>{`
       details {
@@ -39,11 +36,7 @@ export const Img = ({ width, height, src, ...p }) => (
       summary::-webkit-details-marker {
         display: none;
       }
-      summary > img {
-        width: 100%;
-        height: 100%;
-        max-height: 100vh;
-        object-fit: cover;
+      summary :global(img) {
         cursor: pointer;
       }
       :global(details-dialog) {
