@@ -3,4 +3,6 @@
  */
 import '@github/details-dialog-element';
 
-export default () => null;
+const Dialog = () => null;
+
+export default Dialog;

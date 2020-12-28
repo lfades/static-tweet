@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Error from 'next/error';
 import { useRouter } from 'next/router';
 import fetchTweetAst from '../../lib/fetchTweetAst';
 import A from '../../components/landing/anchor';
@@ -22,25 +21,21 @@ export async function getStaticProps({ params }) {
   const { tweet } = params;
 
   if (tweet.length > 40 || !TWEET_ID.test(tweet)) {
-    return { props: {} };
+    return { notFound: true };
   }
 
   try {
     const ast = await fetchTweetAst(tweet);
-    return { props: ast ? { ast } : {} };
+    return ast ? { props: { ast } } : { notFound: true };
   } catch (error) {
     // The Twitter API most likely died
     console.error(error);
-    return { props: {} };
+    return { notFound: true };
   }
 }
 
 export default function Tweet({ date, ast }) {
   const { isFallback } = useRouter();
-
-  if (!isFallback && !ast) {
-    return <Error statusCode={404} title="This tweet could not be found" />;
-  }
 
   return (
     <div className={`page-wrapper ${styles.theme}`}>
