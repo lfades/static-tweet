@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
+import Image from 'next/image';
 import formatDistanceStrict from 'date-fns/formatDistanceStrict';
+import s from './twitter.module.css';
 
 export const TwitterLink = p => (
   <a href={p.href} target="_blank" rel="noopener noreferrer" title={p.title || p.href}>
@@ -40,17 +42,9 @@ export const Cashtag = p => (
 );
 
 export const Emoji = p => (
-  <>
-    <img {...p} />
-    <style jsx>{`
-      img {
-        height: 18px;
-        width: 18px;
-        margin: 0 2px;
-        vertical-align: -3px;
-      }
-    `}</style>
-  </>
+  <span className={s.emoji}>
+    <Image width={18} height={18} unoptimized {...p} />
+  </span>
 );
 
 // Note: Poll data is most likely cached, so ongoing polls will not be updated

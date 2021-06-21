@@ -28,14 +28,11 @@
   --tweet-bg-color: #000;
   --tweet-border: 1px solid var(--accents-2);
   --tweet-border-hover: var(--tweet-border);
+  --tweet-avatar-border: var(--tweet-border);
   --tweet-link-color: #2b7bb9;
   --tweet-link-color-hover: #3b94d9;
   --tweet-color-gray: var(--accents-4);
   --tweet-color-red: #e02460;
-}
-
-.theme :global(.avatar) > img {
-  border: var(--tweet-border);
 }
 
 .theme :global(.tweet:hover) {
