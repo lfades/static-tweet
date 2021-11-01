@@ -1,12 +1,12 @@
-import cn from 'clsx';
-import formatNumber from '../../../../lib/format-number';
-import s from './tweet-action.module.css';
+import cn from 'clsx'
+import formatNumber from '../../../../lib/format-number'
+import s from './tweet-action.module.css'
 
 export default function TweetAction({ tweet }) {
-  const userUrl = `https://twitter.com/${tweet.username}`;
-  const tweetUrl = `${userUrl}/status/${tweet.id}`;
-  const count = tweet.replies + tweet.retweets;
-  const isConversation = tweet.ctaType === 'conversation' || count > 4;
+  const userUrl = `https://twitter.com/${tweet.username}`
+  const tweetUrl = `${userUrl}/status/${tweet.id}`
+  const count = tweet.replies + tweet.retweets
+  const isConversation = tweet.ctaType === 'conversation' || count > 4
 
   return (
     <>
@@ -20,7 +20,8 @@ export default function TweetAction({ tweet }) {
         >
           <div className={cn('icon', s['icon-reply'])} />
           <span className={s.text}>
-            {count ? formatNumber(count) : tweet.ctaCount} people are talking about this
+            {count ? formatNumber(count) : tweet.ctaCount} people are talking
+            about this
           </span>
           <div className="icon icon-chevron" />
         </a>
@@ -38,5 +39,5 @@ export default function TweetAction({ tweet }) {
         </a>
       )}
     </>
-  );
+  )
 }

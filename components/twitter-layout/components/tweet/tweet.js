@@ -1,7 +1,7 @@
-import TweetHeader from './tweet-header';
-import TweetInfo from './tweet-info';
-import TweetAction from './tweet-action';
-import s from './tweet.module.css';
+import TweetHeader from './tweet-header'
+import TweetInfo from './tweet-info'
+import TweetAction from './tweet-action'
+import s from './tweet.module.css'
 
 export default function Tweet({ children, data }) {
   return (
@@ -13,5 +13,5 @@ export default function Tweet({ children, data }) {
       </blockquote>
       <TweetAction tweet={data} />
     </div>
-  );
+  )
 }

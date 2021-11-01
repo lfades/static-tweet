@@ -6,4 +6,4 @@ module.exports = {
     concurrentFeatures: true,
     serverComponents: true,
   },
-};
+}

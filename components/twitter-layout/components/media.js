@@ -1,13 +1,18 @@
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import cn from 'clsx';
-import s from './media.module.css';
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import cn from 'clsx'
+import s from './media.module.css'
 
-const LoadDetailsDialog = dynamic(() => import('../details-dialog'), { ssr: false });
+const LoadDetailsDialog = dynamic(() => import('../details-dialog'), {
+  ssr: false,
+})
 
 export const Img = ({ width, height, src, ...p }) => (
   <details className={s.details}>
-    <summary className={s.summary} style={{ paddingBottom: `${(height / width) * 100 || 0}%` }}>
+    <summary
+      className={s.summary}
+      style={{ paddingBottom: `${(height / width) * 100 || 0}%` }}
+    >
       <Image
         {...p}
         className={cn(s.image, p.className)}
@@ -25,4 +30,4 @@ export const Img = ({ width, height, src, ...p }) => (
 
     <LoadDetailsDialog />
   </details>
-);
+)
