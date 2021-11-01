@@ -1,3 +1,6 @@
+import cn from 'clsx';
+import s from './anchor.module.css';
+
 const PROTOCOL = /^(https?:|)\/\//;
 
 const beautifyHref = href => {
@@ -23,17 +26,8 @@ export const A = p => (
     target="_blank"
     rel="noopener noreferrer"
     title={p.title || p.href}
-    className={p.className}
+    className={cn(s.root, p.className)}
   >
     {p.children[0] === p.href ? beautifyHref(p.href) : p.children}
-    <style jsx>{`
-      a {
-        color: var(--link-color);
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-    `}</style>
   </a>
 );

@@ -1,0 +1,38 @@
+.summary {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  list-style: none;
+}
+.summary::-webkit-details-marker {
+  display: none;
+}
+.image {
+  cursor: pointer;
+}
+.details-dialog {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+  transform: translateX(-50%);
+  padding: 5vh 1.5rem;
+  z-index: 999;
+}
+.details[open] .bg {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 450px) {
+  .details-dialog {
+    padding: 5vh 1rem;
+  }
+}

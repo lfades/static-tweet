@@ -1,0 +1,7 @@
+.root {
+  color: var(--link-color);
+  text-decoration: none;
+}
+.root:hover {
+  text-decoration: underline;
+}

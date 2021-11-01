@@ -1,0 +1,17 @@
+.p {
+  margin: var(--text-margin);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.blockquote {
+  background: var(--accents-1);
+  color: var(--accents-5);
+  border: 1px solid var(--accents-2);
+  margin: var(--container-margin);
+  padding: 0 1.25rem;
+}
+.hr {
+  border: 0;
+  border-top: 1px solid var(--accents-2);
+  margin: var(--text-margin);
+}
