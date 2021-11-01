@@ -48,6 +48,8 @@
     "unist-util-visit": "^2.0.2"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "@types/react": "^17.0.33",
+    "prettier": "^2.0.5",
+    "typescript": "^4.4.4"
   }
 }
