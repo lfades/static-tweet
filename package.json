@@ -11,10 +11,8 @@
     "start": "next start"
   },
   "prettier": {
-    "trailingComma": "es5",
-    "singleQuote": true,
-    "printWidth": 100,
-    "arrowParens": "avoid"
+    "semi": false,
+    "singleQuote": true
   },
   "repository": {
     "type": "git",
