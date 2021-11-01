@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import cn from 'clsx';
 import fetchTweetAst from '../../lib/fetchTweetAst';
 import A from '../../components/landing/anchor';
 import Node from '../../components/html/node';
@@ -7,6 +8,7 @@ import TweetSkeleton from '../../components/twitter-layout/tweet-skeleton';
 import components from '../../components/twitter-layout/components';
 import styles from '../../components/twitter-layout/twitter.module.css';
 import TweetMeta from '../../components/tweet-meta';
+import s from '../styles/page.module.css';
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
 // the user to get the tweet
@@ -38,13 +40,13 @@ export default function Tweet({ date, ast }) {
   const { isFallback } = useRouter();
 
   return (
-    <div className={`page-wrapper ${styles.theme}`}>
+    <div className={cn(s.page, styles.theme)}>
       <TweetMeta />
 
-      <main>
+      <main className={s.main}>
         {isFallback ? <TweetSkeleton /> : <Node components={components} node={ast[0]} />}
 
-        <footer>
+        <footer className={s.footer}>
           <p>
             {isFallback
               ? '🤯 This tweet is statically generating.'
@@ -55,26 +57,6 @@ export default function Tweet({ date, ast }) {
           </p>
         </footer>
       </main>
-
-      <style jsx>{`
-        .page-wrapper {
-          color: var(--tweet-font-color);
-          background: var(--bg-color);
-          height: 100vh;
-          overflow: scroll;
-          padding: 2rem 1rem;
-        }
-        main {
-          width: 500px;
-          max-width: 100%;
-          margin: 0 auto;
-        }
-        footer {
-          font-size: 0.875rem;
-          text-align: center;
-          margin-top: -0.5rem;
-        }
-      `}</style>
     </div>
   );
 }

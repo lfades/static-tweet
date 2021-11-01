@@ -1,13 +1,5 @@
-import css from 'styled-jsx/css';
 import cn from 'clsx';
 import s from './headings.module.css';
-
-const { className, styles } = css.resolve`
-   {
-    font-weight: 600;
-    margin: var(--heading-margin-top) 0 var(--heading-margin-bottom) 0;
-  }
-`;
 
 const Permalink = ({ children, id }) => (
   <>
