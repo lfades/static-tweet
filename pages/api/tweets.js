@@ -1,5 +1,3 @@
-import fetch from '../../lib/fetch'
-
 const QUERY = 'javascript'
 const LANG = 'en'
 
