@@ -33,7 +33,7 @@ export default function Index({ tweet }) {
       <P>
         was inlined into the HTML of this page (<Code className="inline">`pages/index.js`</Code>) by
         using <Code className="inline">`getStaticProps`</Code> in your Next.js page (
-        <A href="https://github.com/lfades/static-tweet/blob/master/pages/index.js">source</A>
+        <A href="https://github.com/lfades/static-tweet/blob/main/pages/index.js">source</A>
         ).
       </P>
       <P>
@@ -78,7 +78,7 @@ export default function Index({ tweet }) {
         This is all enabled by a simple option: <Code className="inline">`fallback: true`</Code> in{' '}
         <Code className="inline">`getStaticPaths`</Code>. In this case, this is defined in the
         Next.js page called <Code className="inline">`pages/[tweet].js`</Code> (
-        <A href="https://github.com/lfades/static-tweet/blob/master/pages/%5Btweet%5D.js">source</A>
+        <A href="https://github.com/lfades/static-tweet/blob/main/pages/%5Btweet%5D.js">source</A>
         ).
       </P>
       <P>
@@ -96,7 +96,7 @@ export default function Index({ tweet }) {
       <P>Resources:</P>
       <Ul>
         <Li>
-          <A href="https://github.com/lfades/static-tweet/blob/master/pages/index.js">
+          <A href="https://github.com/lfades/static-tweet/blob/main/pages/index.js">
             Source code
           </A>{' '}
           for this page
