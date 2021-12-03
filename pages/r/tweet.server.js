@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import useData from '../../lib/use-data'
-import fetchTweetAst from '../../lib/fetchTweetAst'
+// import fetchTweetAst from '../../lib/fetchTweetAst'
 import Node from '../../components/html/node'
 import Fallback from '../../components/twitter-layout/fallback.client'
 import Tweet from '../../components/twitter-layout/tweet.client'
