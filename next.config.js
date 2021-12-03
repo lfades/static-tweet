@@ -3,6 +3,7 @@ module.exports = {
     domains: ['pbs.twimg.com', 'abs.twimg.com'],
   },
   experimental: {
+    reactRoot: true,
     concurrentFeatures: true,
     serverComponents: true,
   },
