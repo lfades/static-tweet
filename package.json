@@ -1,10 +1,6 @@
 {
   "name": "static-tweet",
   "version": "0.0.1",
-  "description": "",
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
