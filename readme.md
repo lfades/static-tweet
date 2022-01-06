@@ -11,7 +11,7 @@ https://static-tweet.now.sh/1238918791947522049
 To have a working copy of this project, run the following command:
 
 ```bash
-yarn create next-app static-tweet --example https://github.com/lfades/static-tweet/tree/master
+yarn create next-app static-tweet --example https://github.com/lfades/static-tweet/tree/main
 ```
 
 To have full access to all Twitter elements, like videos and polls, you'll need a Twitter API Token, once you have it, copy the [`.env.local.example`](.env.local.example) file in the root directory to `.env.local` (which will be ignored by Git):
