@@ -26,7 +26,7 @@
   "homepage": "https://github.com/lfades/static-tweet#readme",
   "dependencies": {
     "@github/details-dialog-element": "^3.0.13",
-    "@mapbox/rehype-prism": "^0.4.0",
+    "@mapbox/rehype-prism": "0.8.0",
     "@vercel/fetch": "^6.1.0",
     "cheerio": "^1.0.0-rc.3",
     "date-fns": "^2.9.0",
