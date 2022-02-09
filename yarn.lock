@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@github/details-dialog-element@^3.0.13":
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/@github/details-dialog-element/-/details-dialog-element-3.1.2.tgz#61f6595c71d786b1a77fbbe79db4c0b9a224fc80"
-  integrity sha512-kUz7VYKmgOtlAo96TVeXSq5bKDS/3Wm0SZt4UetJK2CcG0/wsx/Eif/fHx1HYEwVsa7FnrB/kCzby0JE8R88zQ==
+"@github/details-dialog-element@3.1.3":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@github/details-dialog-element/-/details-dialog-element-3.1.3.tgz#898c21836c3412d675dbbc6092cbf4f8dece48d2"
+  integrity sha512-NWTiMK7jnQllsEtzkZ0S4+4NneXsGn+JU0YFum1GyVfVBIfHXue+Ev7qOJxwGoOyBzfeSNz1uxuRWUvX+lavaw==
 
 "@mapbox/rehype-prism@^0.4.0":
   version "0.4.0"
