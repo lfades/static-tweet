@@ -40,8 +40,8 @@
     "rehype-parse": "^6.0.2",
     "rehype-raw": "^4.0.1",
     "rehype-sanitize": "^3.0.0",
-    "remark-parse": "^7.0.2",
-    "remark-rehype": "^8.0.0",
+    "remark-parse": "10.0.1",
+    "remark-rehype": "10.1.0",
     "unified": "^8.4.2",
     "unist-util-visit": "^2.0.2"
   },
