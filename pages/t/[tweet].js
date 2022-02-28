@@ -7,8 +7,8 @@ import TweetSkeleton from '../../components/twitter-layout/tweet-skeleton'
 import components from '../../components/twitter-layout/components'
 import styles from '../../components/twitter-layout/twitter.module.css'
 import TweetMeta from '../../components/tweet-meta'
-import Fallback from '../../components/twitter-layout/fallback'
-import Tweet from '../../components/twitter-layout/tweet'
+import Fallback from '../../components/twitter-layout/fallback.client'
+import Tweet from '../../components/twitter-layout/tweet.client'
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
 // the user to get the tweet
