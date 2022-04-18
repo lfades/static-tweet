@@ -1,6 +1,6 @@
-import fetchTweetAst from '../../lib/fetchTweetAst'
-import TweetPage from '../../components/tweet-page'
-import styles from '../../components/dark-layout/dark.module.css'
+import fetchTweetAst from '../lib/fetchTweetAst'
+import TweetPage from '../components/tweet-page'
+import styles from '../components/twitter-layout/twitter.module.css'
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
 // the user to get the tweet
