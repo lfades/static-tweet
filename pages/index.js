@@ -30,12 +30,9 @@ export default function Index({ tweet }) {
       </P>
       <Tweet ast={tweet} />
       <P>
-        was inlined into the HTML of this page (
-        <Code className="inline">`pages/index.js`</Code>) by using{' '}
-        <Code className="inline">`getStaticProps`</Code> in your Next.js page (
-        <A href="https://github.com/lfades/static-tweet/blob/main/pages/index.js">
-          source
-        </A>
+        was inlined into the HTML of this page (<Code className="inline">`pages/index.js`</Code>) by
+        using <Code className="inline">`getStaticProps`</Code> in your Next.js page (
+        <A href="https://github.com/lfades/static-tweet/blob/main/pages/index.js">source</A>
         ).
       </P>
       <P>
@@ -85,14 +82,10 @@ export default function Index({ tweet }) {
         storage.
       </P>
       <P>
-        This is all enabled by a simple option:{' '}
-        <Code className="inline">`fallback: true`</Code> in{' '}
-        <Code className="inline">`getStaticPaths`</Code>. In this case, this is
-        defined in the Next.js page called{' '}
-        <Code className="inline">`pages/[tweet].js`</Code> (
-        <A href="https://github.com/lfades/static-tweet/blob/main/pages/%5Btweet%5D.js">
-          source
-        </A>
+        This is all enabled by a simple option: <Code className="inline">`fallback: true`</Code> in{' '}
+        <Code className="inline">`getStaticPaths`</Code>. In this case, this is defined in the
+        Next.js page called <Code className="inline">`pages/[tweet].js`</Code> (
+        <A href="https://github.com/lfades/static-tweet/blob/main/pages/%5Btweet%5D.js">source</A>
         ).
       </P>
       <P>

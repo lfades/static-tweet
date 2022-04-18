@@ -4,7 +4,7 @@ Completely customizable static tweet for Next.js applications.
 
 ## Demo
 
-https://static-tweet.now.sh/1238918791947522049
+https://static-tweet.vercel.app/1238918791947522049
 
 ## How to use
 
