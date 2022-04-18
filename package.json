@@ -1,17 +1,15 @@
 {
   "name": "static-tweet",
   "version": "0.0.1",
-  "description": "",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prettier": "prettier --write ."
   },
   "prettier": {
-    "trailingComma": "es5",
-    "singleQuote": true,
-    "printWidth": 100,
-    "arrowParens": "avoid"
+    "semi": false,
+    "singleQuote": true
   },
   "repository": {
     "type": "git",
@@ -27,16 +25,15 @@
   "dependencies": {
     "@github/details-dialog-element": "^3.0.13",
     "@mapbox/rehype-prism": "^0.4.0",
-    "@vercel/fetch": "^6.1.0",
     "cheerio": "^1.0.0-rc.3",
+    "clsx": "^1.1.1",
     "date-fns": "^2.9.0",
     "dotenv": "^8.2.0",
     "github-slugger": "^1.3.0",
     "mdast-util-to-string": "^1.0.7",
-    "next": "^12.0.10",
-    "node-fetch": "^2.6.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "next": "^12.1.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "rehype-parse": "^6.0.2",
     "rehype-raw": "^4.0.1",
     "rehype-sanitize": "^3.0.0",
@@ -46,6 +43,8 @@
     "unist-util-visit": "^2.0.2"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "@types/react": "^17.0.33",
+    "prettier": "^2.0.5",
+    "typescript": "^4.4.4"
   }
 }

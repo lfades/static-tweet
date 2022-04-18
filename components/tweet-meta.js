@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from 'next/head'
 
 export default function TweetMeta() {
   // TODO: Use real tweet metadata here
@@ -18,5 +18,5 @@ export default function TweetMeta() {
       <meta property="og:image" content="/assets/twitter-card.png" />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
-  );
+  )
 }

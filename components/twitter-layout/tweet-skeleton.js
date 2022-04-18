@@ -1,5 +1,5 @@
-import Skeleton from './skeleton';
-import styles from './tweet-skeleton.module.css';
+import Skeleton from './skeleton'
+import styles from './tweet-skeleton.module.css'
 
 export default function TweetSkeleton({ simple = false }) {
   return (
@@ -15,5 +15,5 @@ export default function TweetSkeleton({ simple = false }) {
         </div>
       )}
     </div>
-  );
+  )
 }
