@@ -11,6 +11,8 @@ https://static-tweet.vercel.app/1238918791947522049
 To have a working copy of this project, run the following command:
 
 ```bash
+npx create-next-app static-tweet --example https://github.com/lfades/static-tweet/tree/main
+# or
 yarn create next-app static-tweet --example https://github.com/lfades/static-tweet/tree/main
 ```
 
