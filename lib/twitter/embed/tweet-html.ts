@@ -1,4 +1,4 @@
-import cheerio from 'cheerio'
+import { type Tweet } from '../api'
 
 function getTweetContent($) {
   const container = $('.EmbeddedTweet-tweetContainer')
@@ -194,12 +194,22 @@ function getTweetContent($) {
   return content
 }
 
-export function getTweetData(html) {
-  const $ = cheerio.load(html, {
-    decodeEntities: false,
-    xmlMode: false,
-  })
-  const tweetContent = getTweetContent($)
+export function parseTweet(tweetData: Tweet) {
+  const meta: any = {}
+  const content: any = { meta }
+  // const tweetContent = getTweetContent($)
 
-  return tweetContent
+  meta.id = tweetData.id_str
+  meta.avatar = {
+    normal: tweetData.user.profile_image_url_https,
+  }
+  meta.name = tweetData.user.name
+  meta.username = tweetData.user.screen_name
+  meta.createdAt = new Date(tweetData.created_at).getTime()
+  meta.heartCount = tweetData.favorite_count
+  // TODO: check if it's a profile
+  meta.ctaType = 'conversation'
+  meta.ctaCount = tweetData.conversation_count
+
+  return content
 }

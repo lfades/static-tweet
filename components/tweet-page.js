@@ -7,6 +7,7 @@ import components from './twitter-layout/components'
 import TweetSkeleton from './twitter-layout/tweet-skeleton'
 import TweetMeta from './tweet-meta'
 import styles from './tweet-page.module.css'
+import Tweet from './twitter-layout/components/tweet/tweet'
 
 export default function TweetPage({ ast, className }) {
   const { isFallback } = useRouter()
@@ -16,19 +17,15 @@ export default function TweetPage({ ast, className }) {
       <TweetMeta />
 
       <main className={styles.main}>
-        {isFallback ? (
-          <TweetSkeleton />
-        ) : (
-          <Node components={components} node={ast[0]} />
-        )}
+        {isFallback ? <TweetSkeleton /> : <Tweet data={ast} />}
       </main>
 
       <footer className={styles.footer}>
         <p>
           🤯 This tweet was statically generated.{' '}
-          <Link href="/" passHref>
-            <A blank={false}>See how</A>
-          </Link>
+          <A href="/" blank={false}>
+            See how
+          </A>
         </p>
       </footer>
     </div>

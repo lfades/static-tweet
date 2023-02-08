@@ -1,15 +1,15 @@
 import cn from 'clsx'
 import format from 'date-fns/format'
-import formatNumber from '../../../../lib/format-number'
-import useMounted from '../../../../lib/use-mounted'
+import type { Tweet } from 'lib/twitter/api'
+import useMounted from 'lib/use-mounted'
 import s from './tweet-info.module.css'
 
-export default function TweetInfo({ tweet }) {
+export default function TweetInfo({ tweet }: { tweet: Tweet }) {
   const mounted = useMounted()
-  const likeUrl = `https://twitter.com/intent/like?tweet_id=${tweet.id}`
-  const tweetUrl = `https://twitter.com/${tweet.username}/status/${tweet.id}`
+  const likeUrl = `https://twitter.com/intent/like?tweet_id=${tweet.id_str}`
+  const tweetUrl = `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`
   const createdAt =
-    typeof window !== 'undefined' && mounted ? new Date(tweet.createdAt) : null
+    typeof window !== 'undefined' && mounted ? new Date(tweet.created_at) : null
 
   return (
     <div className={s.info}>
@@ -23,10 +23,8 @@ export default function TweetInfo({ tweet }) {
         <div className={s.heart}>
           <div className={cn('icon', s['icon-heart'])} role="img" />
         </div>
-        {(tweet.heartCount || tweet.likes > 0) && (
-          <span className={s.likes}>
-            {tweet.heartCount || formatNumber(tweet.likes)}
-          </span>
+        {tweet.favorite_count > 0 && (
+          <span className={s.likes}>{tweet.favorite_count}</span>
         )}
       </a>
       {createdAt && (
