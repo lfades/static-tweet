@@ -1,6 +1,11 @@
 .header {
   display: flex;
   padding-bottom: 0.75rem;
+  line-height: 1.25rem;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  overflow: hidden;
 }
 
 .avatar {
@@ -68,19 +73,8 @@
 .authorFollow {
   display: flex;
 }
-.authorLinkText,
-.authorVerified,
-.authorMeta {
-  line-height: 20px;
-  font-family: var(--tweet-font);
-  font-size: 15px;
-  white-space: nowrap;
-  overflow-wrap: break-word;
-  overflow: hidden;
-}
 .username {
   color: rgb(83, 100, 113);
-  font-weight: 400;
   text-decoration: none;
   text-overflow: ellipsis;
 }
