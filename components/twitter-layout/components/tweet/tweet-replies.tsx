@@ -1,9 +1,9 @@
 import cn from 'clsx'
 import type { Tweet } from 'lib/twitter/api'
 import formatNumber from 'lib/format-number'
-import s from './tweet-action.module.css'
+import s from './tweet-replies.module.css'
 
-export default function TweetAction({ tweet }: { tweet: Tweet }) {
+export default function TweetReplies({ tweet }: { tweet: Tweet }) {
   const userUrl = `https://twitter.com/${tweet.user.screen_name}`
   const tweetUrl = `${userUrl}/status/${tweet.id_str}`
   const count = tweet.conversation_count
@@ -12,25 +12,20 @@ export default function TweetAction({ tweet }: { tweet: Tweet }) {
   return (
     <>
       {isConversation ? (
-        <a
-          className={s.link}
-          href={tweetUrl}
-          title="View the conversation on Twitter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className={cn('icon', s['icon-reply'])} />
-          <span className={s.text}>
-            {count ? formatNumber(count) : tweet.conversation_count} people are
-            talking about this
-          </span>
-          <div className="icon icon-chevron" />
-        </a>
+        <div className={s.replies}>
+          <a
+            className={s.link}
+            href={tweetUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className={s.text}>Read {formatNumber(count)} replies</span>
+          </a>
+        </div>
       ) : (
         <a
           className={s.link}
           href={userUrl}
-          title={`View ${tweet.user.name}'s profile on Twitter`}
           target="_blank"
           rel="noopener noreferrer"
         >

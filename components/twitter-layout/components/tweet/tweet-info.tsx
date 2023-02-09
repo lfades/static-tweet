@@ -28,7 +28,6 @@ export default function TweetInfo({ tweet }: { tweet: Tweet }) {
       <a
         className={s.infoLink}
         href="https://help.twitter.com/en/twitter-for-websites-ads-info-and-privacy"
-        title="Like"
         target="_blank"
         rel="noopener noreferrer"
       >
