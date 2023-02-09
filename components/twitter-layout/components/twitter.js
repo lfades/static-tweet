@@ -11,21 +11,16 @@ export const TwitterLink = (p) => (
     rel="noopener noreferrer"
     title={p.title || p.href}
   >
-    <s className={s.s}>{p.type}</s>
     <b>{p.children}</b>
   </a>
 )
 
 export const Mention = (p) => (
-  <TwitterLink href={p.href} type="@">
-    {p.children[0].replace(/^@/, '')}
-  </TwitterLink>
+  <TwitterLink href={p.href}>{p.children}</TwitterLink>
 )
 
 export const Hashtag = (p) => (
-  <TwitterLink href={p.href} type="#">
-    {p.children[0].replace(/^\#/, '')}
-  </TwitterLink>
+  <TwitterLink href={p.href}>{p.children}</TwitterLink>
 )
 
 export const Cashtag = (p) => (

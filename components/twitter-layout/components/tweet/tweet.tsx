@@ -1,21 +1,19 @@
 import type { Tweet } from 'lib/twitter/api'
 import TweetHeader from './tweet-header'
+import TweetBody from './tweet-body'
 import TweetInfo from './tweet-info'
 import TweetAction from './tweet-action'
-import { P } from '../text'
 import s from './tweet.module.css'
-import TweetBody from './tweet-body'
 
-export default function Tweet({ data: tweet }: { data: Tweet }) {
-  // console.log(JSON.stringify(tweet, null, 2))
-  return (
-    <div className={s.tweet}>
-      <blockquote className={s.blockquote}>
-        <TweetHeader tweet={tweet} />
-        <TweetBody tweet={tweet} />
-        <TweetInfo tweet={tweet} />
-      </blockquote>
+const Tweet = ({ data: tweet }: { data: Tweet }) => (
+  <div className={s.tweet}>
+    <article className={s.article}>
+      <TweetHeader tweet={tweet} />
+      <TweetBody tweet={tweet} />
+      <TweetInfo tweet={tweet} />
       <TweetAction tweet={tweet} />
-    </div>
-  )
-}
+    </article>
+  </div>
+)
+
+export default Tweet

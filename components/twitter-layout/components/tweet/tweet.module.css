@@ -2,17 +2,24 @@
   color: var(--tweet-font-color);
   font: var(--tweet-font);
   overflow: hidden;
-  background: var(--tweet-bg-color);
   border: var(--tweet-border);
-  border-radius: 5px;
+  border-radius: 12px;
   margin: var(--container-margin);
+  box-sizing: border-box;
 }
-.tweet:hover {
-  border: var(--tweet-border-hover);
-}
-.blockquote {
+.article {
   position: relative;
-  padding: 1.25rem 1.25rem 0.625rem 1.25rem;
+  outline-style: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem 0.25rem 1rem;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+  background-color: var(--tweet-bg-color);
+}
+.article:hover {
+  background-color: var(--tweet-bg-color-hover);
 }
 .tweet :global(.icon) {
   display: inline-block;

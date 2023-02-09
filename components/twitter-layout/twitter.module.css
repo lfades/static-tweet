@@ -23,12 +23,12 @@
   --li-margin: 0 0 0.5rem 0;
 
   /* Embedded tweet */
-  --tweet-font: normal normal 16px/1.4 Helvetica, Roboto, 'Segoe UI', Calibri,
-    sans-serif;
-  --tweet-font-color: #1c2022;
+  --tweet-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  --tweet-font-color: rgb(15, 20, 25);
   --tweet-bg-color: #fff;
-  --tweet-border: 1px solid #e1e8ed;
-  --tweet-border-hover: 1px solid #ccd6dd;
+  --tweet-bg-color-hover: rgb(247, 249, 249);
+  --tweet-border: 1px solid rgb(207, 217, 222);
   --tweet-avatar-border: none;
   --tweet-link-color: #2b7bb9;
   --tweet-link-color-hover: #3b94d9;

@@ -1,40 +1,96 @@
 .header {
   display: flex;
+  padding-bottom: 0.75rem;
 }
 
 .avatar {
-  height: 36px;
-  width: 36px;
-  margin-right: 0.625rem;
+  position: relative;
+  height: 48px;
+  width: 48px;
 }
-.avatar > div {
+.avatarOverflow {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 9999px;
+}
+/* .avatarOverflow > div {
   border: var(--tweet-avatar-border);
   border-radius: 50%;
+} */
+.avatarShadow {
+  height: 100%;
+  width: 100%;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  box-shadow: rgb(0 0 0 / 3%) 0px 0px 2px inset;
+}
+.avatarShadow:hover {
+  background-color: rgba(26, 26, 26, 0.15);
 }
 
 .author {
+  max-width: calc(100% - 84px);
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 0 0.25rem;
+}
+.authorLink {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  align-items: center;
 }
-.author:hover {
-  color: var(--tweet-link-color-hover);
+.authorLink:hover {
+  text-decoration-line: underline;
 }
-
-.name,
-.username {
-  line-height: 1.2;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+.authorVerified {
+  display: inline-flex;
 }
-.name {
+.authorLinkText {
   font-weight: 700;
 }
+.authorVerifiedIcon {
+  margin-left: 0.125rem;
+  max-width: 20px;
+  max-height: 20px;
+  height: 1.25em;
+  color: rgb(130, 154, 171);
+  fill: currentColor;
+  user-select: none;
+  vertical-align: text-bottom;
+}
+.authorMeta {
+  display: flex;
+}
+.authorFollow {
+  display: flex;
+}
+.authorLinkText,
+.authorVerified,
+.authorMeta {
+  line-height: 20px;
+  font-family: var(--tweet-font);
+  font-size: 15px;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
 .username {
-  color: var(--tweet-color-gray);
-  font-size: 0.875rem;
+  color: rgb(83, 100, 113);
+  font-weight: 400;
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+.follow {
+  color: rgb(0, 111, 214);
+  text-decoration: none;
+  font-weight: 700;
+}
+.separator {
+  padding: 0 0.25rem;
 }
 
 .brand {
