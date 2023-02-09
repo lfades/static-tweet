@@ -20,10 +20,6 @@
   overflow: hidden;
   border-radius: 9999px;
 }
-/* .avatarOverflow > div {
-  border: var(--tweet-avatar-border);
-  border-radius: 50%;
-} */
 .avatarShadow {
   height: 100%;
   width: 100%;
@@ -62,10 +58,15 @@
   max-width: 20px;
   max-height: 20px;
   height: 1.25em;
-  color: rgb(130, 154, 171);
   fill: currentColor;
   user-select: none;
   vertical-align: text-bottom;
+}
+.verifiedOld {
+  color: rgb(130, 154, 171);
+}
+.verifiedBlue {
+  color: rgb(29, 155, 240);
 }
 .authorMeta {
   display: flex;
