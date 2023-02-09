@@ -1,0 +1,90 @@
+.actions {
+  display: flex;
+  align-items: center;
+  color: rgb(83, 100, 113);
+  padding-top: 0.25rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid rgb(207, 217, 222);
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.like,
+.reply,
+.copy {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  margin-right: 1.25rem;
+}
+.like:hover,
+.reply:hover,
+.copy:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+.like:hover > .likeIconWrapper {
+  background-color: rgba(249, 24, 128, 0.1);
+}
+.like:hover > .likeCount {
+  color: rgb(249, 24, 128);
+  text-decoration-line: underline;
+}
+.likeIconWrapper,
+.replyIconWrapper,
+.copyIconWrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -0.25rem;
+  border-radius: 9999px;
+}
+.likeIcon,
+.replyIcon,
+.copyIcon {
+  height: 1.25em;
+  fill: currentColor;
+  user-select: none;
+}
+.likeIcon {
+  color: rgb(249, 24, 128);
+}
+.likeCount,
+.replyText,
+.copyText {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1rem;
+  margin-left: 0.25rem;
+}
+
+.reply:hover > .replyIconWrapper {
+  background-color: rgba(0, 111, 214, 0.1);
+}
+.reply:hover > .replyText {
+  color: rgb(0, 111, 214);
+  text-decoration-line: underline;
+}
+.replyIcon {
+  color: rgb(29, 155, 240);
+}
+
+.copy {
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.copy:hover > .copyIconWrapper {
+  background-color: rgba(0, 186, 124, 0.1);
+}
+.copy:hover .copyIcon {
+  color: rgb(0, 186, 124);
+}
+.copy:hover > .copyText {
+  color: rgb(0, 186, 124);
+  text-decoration-line: underline;
+}

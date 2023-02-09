@@ -5,6 +5,7 @@ import TweetBody from './tweet-body'
 import TweetInfo from './tweet-info'
 import TweetAction from './tweet-action'
 import s from './tweet.module.css'
+import TweetActions from './tweet-actions'
 
 const Tweet = ({ data: tweet }: { data: Tweet }) => (
   <div className={s.tweet}>
@@ -13,6 +14,7 @@ const Tweet = ({ data: tweet }: { data: Tweet }) => (
       {tweet.in_reply_to_status_id_str && <TweetInReplyTo tweet={tweet} />}
       <TweetBody tweet={tweet} />
       <TweetInfo tweet={tweet} />
+      <TweetActions tweet={tweet} />
       <TweetAction tweet={tweet} />
     </article>
   </div>

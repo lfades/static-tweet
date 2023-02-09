@@ -8,7 +8,6 @@
   overflow-wrap: break-word;
   white-space: nowrap;
   text-overflow: ellipsis;
-  /* overflow: hidden; */
 }
 .infoLink,
 .time {
