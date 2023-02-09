@@ -1,0 +1,15 @@
+.root {
+  color: rgb(83, 100, 113);
+  font-weight: 400;
+  font-size: 15px;
+  font-family: var(--tweet-font);
+  line-height: 20px;
+  margin-bottom: 0.25rem;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  text-decoration: none;
+}
+.root:hover {
+  text-decoration-thickness: 1px;
+  text-decoration-line: underline;
+}
