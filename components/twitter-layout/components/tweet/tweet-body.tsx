@@ -1,16 +1,26 @@
 import type { FC } from 'react'
-import type { Indices, Tweet } from 'lib/twitter/api'
+import type {
+  Indices,
+  Tweet,
+  Hashtag as THashtag,
+  UserMention,
+} from 'lib/twitter/api'
 import { Hashtag, Mention } from '../twitter'
 import s from './tweet-body.module.css'
 
-type Entity = {
+type TextEntity = {
   indices: Indices
-  type: 'text' | 'hashtag' | 'mention'
+  type: 'text'
 }
+
+type Entity =
+  | TextEntity
+  | (THashtag & { type: 'hashtag' })
+  | (UserMention & { type: 'mention' })
 
 function addEntities(
   result: Entity[],
-  entities: { indices: Indices }[],
+  entities: (THashtag | UserMention)[],
   type: Entity['type']
 ) {
   for (const entity of entities) {
@@ -21,7 +31,7 @@ function addEntities(
       )
         continue
 
-      const items: Entity[] = [{ indices: entity.indices, type }]
+      const items = [{ ...entity, type }] as Entity[]
 
       if (item.indices[0] < entity.indices[0]) {
         items.unshift({
@@ -63,9 +73,20 @@ const TweetBody: FC<{ tweet: Tweet }> = ({ tweet }) => {
           case 'text':
             return <span key={i}>{text}</span>
           case 'hashtag':
-            return <Hashtag key={i}>{text}</Hashtag>
+            return (
+              <Hashtag
+                key={i}
+                href={`https://twitter.com/hashtag/${item.text}`}
+              >
+                {text}
+              </Hashtag>
+            )
           case 'mention':
-            return <Mention key={i}>{text}</Mention>
+            return (
+              <Mention key={i} href={`https://twitter.com/${item.screen_name}`}>
+                {text}
+              </Mention>
+            )
         }
       })}
     </p>
