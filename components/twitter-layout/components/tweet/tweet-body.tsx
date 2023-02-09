@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import type { Indices, Tweet } from 'lib/twitter/api'
 import { Hashtag, Mention } from '../twitter'
+import s from './tweet-body.module.css'
 
 type Entity = {
   indices: Indices
@@ -54,7 +55,7 @@ const TweetBody: FC<{ tweet: Tweet }> = ({ tweet }) => {
   const entities = getEntities(tweet)
 
   return (
-    <p>
+    <p className={s.root}>
       {entities.map((item, i) => {
         const text = tweet.text.slice(...item.indices)
 
@@ -62,7 +63,6 @@ const TweetBody: FC<{ tweet: Tweet }> = ({ tweet }) => {
           case 'text':
             return <span key={i}>{text}</span>
           case 'hashtag':
-            console.log('SS', text)
             return <Hashtag key={i}>{text}</Hashtag>
           case 'mention':
             return <Mention key={i}>{text}</Mention>

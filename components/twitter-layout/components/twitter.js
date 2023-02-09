@@ -11,7 +11,7 @@ export const TwitterLink = (p) => (
     rel="noopener noreferrer"
     title={p.title || p.href}
   >
-    <b>{p.children}</b>
+    {p.children}
   </a>
 )
 

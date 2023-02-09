@@ -4,11 +4,13 @@
   display: inline-flex;
 }
 .link {
-  color: #22bad9;
+  color: rgb(0, 111, 214);
   text-decoration: none;
+  cursor: pointer;
 }
-.link:hover > b {
-  text-decoration: underline;
+.link:hover {
+  text-decoration-thickness: 1px;
+  text-decoration-line: underline;
 }
 .s {
   text-decoration: none;

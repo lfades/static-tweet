@@ -1,0 +1,9 @@
+.root {
+  color: rgb(15, 20, 25);
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: var(--tweet-font);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
