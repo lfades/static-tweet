@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@github/details-dialog-element': ^3.0.13
   '@mapbox/rehype-prism': ^0.4.0
   '@types/node': 18.13.0
   '@types/react': ^18.0.27
@@ -25,7 +24,6 @@ specifiers:
   unist-util-visit: ^2.0.2
 
 dependencies:
-  '@github/details-dialog-element': 3.1.4
   '@mapbox/rehype-prism': 0.4.0
   cheerio: 1.0.0-rc.12
   clsx: 1.2.1
@@ -51,10 +49,6 @@ devDependencies:
   typescript: 4.9.5
 
 packages:
-
-  /@github/details-dialog-element/3.1.4:
-    resolution: {integrity: sha512-7trlBxSNAaPhtqXKz7ZJwYx+wigq4FY+8dGAUzsg35ijp4KJh+o16YVWvcZEBS1sEbDh/m8QyYG3ku3v5J2rmw==}
-    dev: false
 
   /@mapbox/rehype-prism/0.4.0:
     resolution: {integrity: sha512-3lOB7cClhuKj4isJQITZp+YGXSmJ3cU71nmZ3vic4zpYrUlotNAogazelzz4QeJC16KsKv3pzP3mer3fgESeCg==}

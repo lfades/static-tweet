@@ -9,12 +9,6 @@
   position: absolute;
   margin-left: -1rem;
 }
-
-.ol {
-  margin: var(--text-margin);
-  padding-left: 1rem;
-}
-
 .li {
   padding-left: 0;
   margin: var(--li-margin);
