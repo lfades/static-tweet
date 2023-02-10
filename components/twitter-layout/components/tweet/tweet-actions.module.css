@@ -79,12 +79,12 @@
   cursor: pointer;
 }
 .copy:hover > .copyIconWrapper {
-  background-color: rgba(0, 186, 124, 0.1);
+  background-color: var(--tweet-color-green-primary-hover);
 }
 .copy:hover .copyIcon {
-  color: rgb(0, 186, 124);
+  color: var(--tweet-color-green-primary);
 }
 .copy:hover > .copyText {
-  color: rgb(0, 186, 124);
+  color: var(--tweet-color-green-primary);
   text-decoration-line: underline;
 }
