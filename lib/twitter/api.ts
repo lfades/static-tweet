@@ -109,7 +109,26 @@ export interface TweetPhoto {
   height: number
 }
 
-export interface MediaDetails {
+export interface TweetVideo {
+  aspectRatio: [number, number]
+  contentType: string
+  durationMs: number
+  mediaAvailability: {
+    status: string
+  }
+  poster: string
+  variants: {
+    type: string
+    src: string
+  }[]
+  videoId: {
+    type: string
+    id: string
+  }
+  viewCount: number
+}
+
+interface MediaBase {
   display_url: string
   expanded_url: string
   ext_media_availability: {
@@ -134,15 +153,33 @@ export interface MediaDetails {
     small: Size
     thumb: Size
   }
-  type: string
   url: string
 }
+
+interface MediaPhoto extends MediaBase {
+  type: 'photo'
+}
+
+interface MediaAnimatedGif extends MediaBase {
+  type: 'animated_gif'
+  video_info: {
+    aspect_ratio: [number, number]
+    variants: {
+      bitrate?: number
+      content_type: string
+      url: string
+    }[]
+  }
+}
+
+export type MediaDetails = MediaPhoto | MediaAnimatedGif
 
 export interface Tweet extends TweetBase {
   __typename: 'Tweet'
   favorite_count: number
   mediaDetails?: MediaDetails[]
   photos?: TweetPhoto[]
+  video?: TweetVideo
   conversation_count: number
   news_action_type: 'conversation'
   quoted_tweet?: QuotedTweet

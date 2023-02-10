@@ -26,15 +26,33 @@ const TweetMedia: FC<{ tweet: Tweet }> = ({ tweet }) => {
             className={s.mediaLink}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={media.type === 'photo' ? 'Image' : 'Embedded Video'}
           >
             <Image
               src={getMediaUrl(media, 'small')}
               className={s.image}
-              alt="Image"
+              alt={media.type === 'photo' ? 'Image' : 'Embedded Video'}
               fill
               draggable
               unoptimized
             />
+            {media.type !== 'photo' && (
+              <div
+                className={s.videoButton}
+                role="button"
+                aria-label="View video on Twitter"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className={s.videoButtonIcon}
+                  aria-hidden="true"
+                >
+                  <g>
+                    <path d="M21 12L4 2v20l17-10z"></path>
+                  </g>
+                </svg>
+              </div>
+            )}
           </a>
         ))}
       </div>
