@@ -1,0 +1,28 @@
+.root {
+  margin-top: 0.75rem;
+  border: 1px solid rgb(207, 217, 222);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.media {
+  display: flex;
+  height: 100%;
+  text-decoration: none;
+  outline-style: none;
+  position: relative;
+}
+.skeleton {
+  padding-bottom: 56.3542%;
+  width: 100%;
+  display: block;
+}
+.image {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

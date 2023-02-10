@@ -1,9 +1,10 @@
+import type { FC } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import type { Tweet } from 'lib/twitter/api'
 import s from './tweet-header.module.css'
 
-export default function TweetHeader({ tweet }: { tweet: Tweet }) {
+const TweetHeader: FC<{ tweet: Tweet }> = ({ tweet }) => {
   const username = tweet.user.screen_name
   const url = `https://twitter.com/${username}`
   const followUrl = `https://twitter.com/intent/follow?screen_name=${username}`
@@ -96,3 +97,5 @@ export default function TweetHeader({ tweet }: { tweet: Tweet }) {
     </div>
   )
 }
+
+export default TweetHeader
