@@ -7,7 +7,7 @@ import type {
   UrlEntity,
   MediaEntity,
 } from 'lib/twitter/api'
-import { Hashtag, Mention, TwitterLink } from '../twitter'
+import TweetLink from './tweet-link'
 import s from './tweet-body.module.css'
 
 type TextEntity = {
@@ -81,24 +81,27 @@ const TweetBody: FC<{ tweet: Tweet }> = ({ tweet }) => {
         switch (item.type) {
           case 'hashtag':
             return (
-              <Hashtag
+              <TweetLink
                 key={i}
                 href={`https://twitter.com/hashtag/${item.text}`}
               >
                 {text}
-              </Hashtag>
+              </TweetLink>
             )
           case 'mention':
             return (
-              <Mention key={i} href={`https://twitter.com/${item.screen_name}`}>
+              <TweetLink
+                key={i}
+                href={`https://twitter.com/${item.screen_name}`}
+              >
                 {text}
-              </Mention>
+              </TweetLink>
             )
           case 'url':
             return (
-              <TwitterLink key={i} href={item.expanded_url}>
+              <TweetLink key={i} href={item.expanded_url}>
                 {item.display_url}
-              </TwitterLink>
+              </TweetLink>
             )
           case 'media':
             // Media text is currently never displayed, some tweets however might have indices

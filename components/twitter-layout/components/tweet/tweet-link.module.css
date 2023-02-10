@@ -1,12 +1,9 @@
-.link {
+.root {
   color: var(--tweet-color-blue-secondary);
   text-decoration: none;
   cursor: pointer;
 }
-.link:hover {
+.root:hover {
   text-decoration-thickness: 1px;
   text-decoration-line: underline;
-}
-.s {
-  text-decoration: none;
 }
