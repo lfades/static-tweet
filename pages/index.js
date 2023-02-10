@@ -1,7 +1,6 @@
 import { fetchTweet } from '../lib/twitter/api'
-import { P, Code, Ul, Li, H2, Hr } from '../components/landing/core'
+import { A, P, Code, Ul, Li, H2, Hr } from '../components/landing/core'
 import Page from '../components/landing/page'
-import A from '../components/landing/anchor'
 import Tweet from '../components/landing/tweet'
 import RandomTweet from '../components/landing/random-tweet'
 import { Score, Gauge } from '../components/landing/lighthouse-score'
@@ -26,7 +25,10 @@ export default function Index({ tweet }) {
         was inlined into the HTML of this page (
         <Code className="inline">`pages/index.js`</Code>) by using{' '}
         <Code className="inline">`getStaticProps`</Code> in your Next.js page (
-        <A href="https://github.com/lfades/static-tweet/blob/main/pages/index.js">
+        <A
+          href="https://github.com/lfades/static-tweet/blob/main/pages/index.js"
+          blank
+        >
           source
         </A>
         ).
@@ -50,7 +52,10 @@ export default function Index({ tweet }) {
         How is this possible? The deploy time for this project was{' '}
         <strong>30 seconds</strong>. We couldn’t have possibly statically
         generated all tweets. Each day,{' '}
-        <A href="https://blog.twitter.com/engineering/en_us/a/2013/new-tweets-per-second-record-and-how.html">
+        <A
+          href="https://blog.twitter.com/engineering/en_us/a/2013/new-tweets-per-second-record-and-how.html"
+          blank
+        >
           500M tweets are added
         </A>
         !
@@ -69,7 +74,10 @@ export default function Index({ tweet }) {
       <Tweet skeleton />
       <P>
         After you refresh that page, you’ll get the static HTML, no matter what
-        edge in the <A href="https://vercel.com/edge-network">global network</A>{' '}
+        edge in the{' '}
+        <A href="https://vercel.com/edge-network" blank>
+          global network
+        </A>{' '}
         you are visiting.
       </P>
       <P>
@@ -83,7 +91,10 @@ export default function Index({ tweet }) {
         <Code className="inline">`getStaticPaths`</Code>. In this case, this is
         defined in the Next.js page called{' '}
         <Code className="inline">`pages/[tweet].js`</Code> (
-        <A href="https://github.com/lfades/static-tweet/blob/main/pages/%5Btweet%5D.js">
+        <A
+          href="https://github.com/lfades/static-tweet/blob/main/pages/%5Btweet%5D.js"
+          blank
+        >
           source
         </A>
         ).
@@ -105,13 +116,16 @@ export default function Index({ tweet }) {
       <P>Resources:</P>
       <Ul>
         <Li>
-          <A href="https://github.com/lfades/static-tweet/blob/main/pages/index.js">
+          <A
+            href="https://github.com/lfades/static-tweet/blob/main/pages/index.js"
+            blank
+          >
             Source code
           </A>{' '}
           for this page
         </Li>
         <Li>
-          <A href="https://nextjs.org/docs/basic-features/data-fetching">
+          <A href="https://nextjs.org/docs/basic-features/data-fetching" blank>
             Next.js documentation
           </A>{' '}
           for <Code className="inline">`getStaticProps`</Code> and{' '}
@@ -119,13 +133,13 @@ export default function Index({ tweet }) {
         </Li>
         <Li>
           Learn about our RFC for{' '}
-          <A href="https://github.com/zeit/next.js/discussions/11552">
+          <A href="https://github.com/zeit/next.js/discussions/11552" blank>
             incrementally updating existing pages
           </A>
         </Li>
         <Li>
           Get started{' '}
-          <A href="https://nextjs.org/learn/basics/create-nextjs-app">
+          <A href="https://nextjs.org/learn/basics/create-nextjs-app" blank>
             learning Next.js from scratch
           </A>
         </Li>
@@ -133,8 +147,10 @@ export default function Index({ tweet }) {
       <P>
         <strong>Author: Luis Alvarez</strong>
         <br />
-        <A href="https://twitter.com/luis_fades">@luis_fades</A> – Solutions
-        Engineer at Vercel
+        <A href="https://twitter.com/luis_fades" blank>
+          @luis_fades
+        </A>{' '}
+        – Solutions Engineer at Vercel
       </P>
     </Page>
   )

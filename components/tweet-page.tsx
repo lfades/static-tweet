@@ -5,8 +5,8 @@ import type { Tweet as TweetType } from 'lib/twitter/api'
 import TweetSkeleton from './twitter-layout/tweet-skeleton'
 import TweetMeta from './tweet-meta'
 import Tweet from './twitter-layout/tweet'
-import A from './landing/anchor'
-import styles from './tweet-page.module.css'
+import { A } from './landing/core'
+import s from './tweet-page.module.css'
 
 const TweetPage: FC<{ tweet: TweetType; className: string }> = ({
   tweet,
@@ -15,19 +15,16 @@ const TweetPage: FC<{ tweet: TweetType; className: string }> = ({
   const { isFallback } = useRouter()
 
   return (
-    <div className={clsx(styles.page, className)}>
+    <div className={clsx(s.page, className)}>
       <TweetMeta />
 
-      <main className={styles.main}>
+      <main className={s.main}>
         {isFallback ? <TweetSkeleton /> : <Tweet data={tweet} />}
       </main>
 
-      <footer className={styles.footer}>
+      <footer className={s.footer}>
         <p>
-          🤯 This tweet was statically generated.{' '}
-          <A href="/" blank={false}>
-            See how
-          </A>
+          🤯 This tweet was statically generated. <A href="/">See how</A>
         </p>
       </footer>
     </div>

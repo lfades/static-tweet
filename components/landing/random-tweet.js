@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import A from './anchor'
+import { A } from './core'
 import styles from './random-tweet.module.css'
 
 const APP_URL = 'https://static-tweet.vercel.app'
