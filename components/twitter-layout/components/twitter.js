@@ -4,13 +4,7 @@ import formatDistanceStrict from 'date-fns/formatDistanceStrict'
 import s from './twitter.module.css'
 
 export const TwitterLink = (p) => (
-  <a
-    className={s.link}
-    href={p.href}
-    target="_blank"
-    rel="noopener noreferrer"
-    title={p.title || p.href}
-  >
+  <a className={s.link} href={p.href} target="_blank" rel="noopener noreferrer">
     {p.children}
   </a>
 )

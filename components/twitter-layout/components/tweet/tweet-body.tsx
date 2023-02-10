@@ -4,8 +4,10 @@ import type {
   Tweet,
   Hashtag as THashtag,
   UserMention,
+  UrlEntity,
+  Media,
 } from 'lib/twitter/api'
-import { Hashtag, Mention } from '../twitter'
+import { Hashtag, Mention, TwitterLink } from '../twitter'
 import s from './tweet-body.module.css'
 
 type TextEntity = {
@@ -17,10 +19,12 @@ type Entity =
   | TextEntity
   | (THashtag & { type: 'hashtag' })
   | (UserMention & { type: 'mention' })
+  | (UrlEntity & { type: 'url' })
+  | (Media & { type: 'media' })
 
 function addEntities(
   result: Entity[],
-  entities: (THashtag | UserMention)[],
+  entities: (THashtag | UserMention | Media)[],
   type: Entity['type']
 ) {
   for (const entity of entities) {
@@ -28,8 +32,9 @@ function addEntities(
       if (
         entity.indices[0] < item.indices[0] ||
         entity.indices[1] > item.indices[1]
-      )
+      ) {
         continue
+      }
 
       const items = [{ ...entity, type }] as Entity[]
 
@@ -57,6 +62,10 @@ function getEntities(tweet: Tweet) {
 
   addEntities(result, tweet.entities.hashtags, 'hashtag')
   addEntities(result, tweet.entities.user_mentions, 'mention')
+  addEntities(result, tweet.entities.urls, 'url')
+  if (tweet.entities.media) {
+    addEntities(result, tweet.entities.media, 'media')
+  }
 
   return result
 }
@@ -70,8 +79,6 @@ const TweetBody: FC<{ tweet: Tweet }> = ({ tweet }) => {
         const text = tweet.text.slice(...item.indices)
 
         switch (item.type) {
-          case 'text':
-            return <span key={i}>{text}</span>
           case 'hashtag':
             return (
               <Hashtag
@@ -87,6 +94,18 @@ const TweetBody: FC<{ tweet: Tweet }> = ({ tweet }) => {
                 {text}
               </Mention>
             )
+          case 'url':
+            return (
+              <TwitterLink key={i} href={item.expanded_url}>
+                {item.display_url}
+              </TwitterLink>
+            )
+          case 'media':
+            // Media text is currently never displayed, some tweets however might have indices
+            // that do match `display_text_range` so for those cases we ignore the content.
+            return undefined
+          default:
+            return <span key={i}>{text}</span>
         }
       })}
     </p>
