@@ -52,11 +52,9 @@ export default function RandomTweet({ initialId }) {
 
   return (
     <>
-      <Link href="/[tweet]" as={`/${id}`} passHref>
-        <A blank={false}>
-          {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
-        </A>
-      </Link>
+      <A href={`/${id}`}>
+        {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
+      </A>
       <div className={styles['random-tweet']}>
         <button
           className={cn([

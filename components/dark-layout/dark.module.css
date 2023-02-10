@@ -1,10 +1,10 @@
 .theme {
   --tweet-skeleton-gradient: linear-gradient(
     270deg,
-    #111111,
-    #333333,
-    #333333,
-    #111111
+    rgb(21, 32, 43),
+    rgb(30, 39, 50),
+    rgb(30, 39, 50),
+    rgb(21, 32, 43)
   );
   --tweet-container-margin: 1.5rem 0;
   --tweet-border: 1px solid rgb(66, 83, 100);
