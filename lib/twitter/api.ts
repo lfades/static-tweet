@@ -15,11 +15,26 @@ export interface UserMention {
   screen_name: string
 }
 
+export interface Media {
+  display_url: string
+  expanded_url: string
+  indices: Indices
+  url: string
+}
+
+export interface UrlEntity {
+  display_url: string
+  expanded_url: string
+  indices: Indices
+  url: string
+}
+
 export interface TweetEntities {
   hashtags: Hashtag[]
-  urls: { url: string; expanded_url: string }[]
+  urls: UrlEntity[]
   user_mentions: UserMention[]
   symbols: { text: string }[]
+  media?: Media[]
 }
 
 export interface TweetUser {
@@ -66,9 +81,68 @@ interface TweetParent extends TweetBase {
   favorite_count: number
 }
 
+type RGB = {
+  red: number
+  green: number
+  blue: number
+}
+
+type Rect = {
+  x: number
+  y: number
+  w: number
+  h: number
+}
+
+type Size = {
+  h: number
+  w: number
+  resize: string
+}
+
+export interface TweetPhoto {
+  backgroundColor: RGB
+  cropCandidates: Rect[]
+  expandedUrl: string
+  url: string
+  width: number
+  height: number
+}
+
+export interface MediaDetails {
+  display_url: string
+  expanded_url: string
+  ext_media_availability: {
+    status: string
+  }
+  ext_media_color: {
+    palette: {
+      percentage: number
+      rgb: RGB
+    }[]
+  }
+  indices: Indices
+  media_url_https: string
+  original_info: {
+    height: number
+    width: number
+    focus_rects: Rect[]
+  }
+  sizes: {
+    large: Size
+    medium: Size
+    small: Size
+    thumb: Size
+  }
+  type: string
+  url: string
+}
+
 export interface Tweet extends TweetBase {
   __typename: 'Tweet'
   favorite_count: number
+  mediaDetails?: MediaDetails[]
+  photos?: TweetPhoto[]
   conversation_count: number
   news_action_type: 'conversation'
   quoted_tweet?: QuotedTweet
@@ -76,6 +150,7 @@ export interface Tweet extends TweetBase {
   in_reply_to_status_id_str?: string
   in_reply_to_user_id_str?: string
   parent?: TweetParent
+  possibly_sensitive?: boolean
 }
 
 function twitterLabsEnabled(expansions: any) {
