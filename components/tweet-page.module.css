@@ -6,9 +6,8 @@
   padding: 2rem 1rem;
 }
 .main {
-  width: 500px;
-  max-width: 100%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 .footer {
   font-size: 0.875rem;

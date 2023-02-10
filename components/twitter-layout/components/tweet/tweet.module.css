@@ -1,4 +1,6 @@
 .tweet {
+  min-width: 250px;
+  max-width: 550px;
   overflow: hidden;
   border: var(--tweet-border);
   border-radius: 12px;
