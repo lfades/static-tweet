@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import type { Tweet as TweetType } from 'lib/twitter/api'
 import TweetSkeleton from './twitter-layout/tweet-skeleton'
 import TweetMeta from './tweet-meta'
-import Tweet from './twitter-layout/components/tweet/tweet'
+import Tweet from './twitter-layout/tweet/tweet'
 import A from './landing/anchor'
 import styles from './tweet-page.module.css'
 
