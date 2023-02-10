@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import cn from 'clsx'
+import clsx from 'clsx'
 import A from './landing/anchor'
 import Node from './html/node'
 import components from './twitter-layout/components'
@@ -13,7 +13,7 @@ export default function TweetPage({ ast, className }) {
   const { isFallback } = useRouter()
 
   return (
-    <div className={cn(styles.page, className)}>
+    <div className={clsx(styles.page, className)}>
       <TweetMeta />
 
       <main className={styles.main}>

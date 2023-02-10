@@ -1,8 +1,9 @@
 .anchor {
-  color: var(--tweet-link-color);
+  color: var(--tweet-color-blue-secondary);
+  text-decoration: none;
 }
 
 .anchor:hover {
-  text-decoration: none;
-  color: var(--tweet-link-color-hover);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
 }
