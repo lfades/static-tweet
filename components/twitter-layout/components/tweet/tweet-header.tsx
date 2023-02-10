@@ -41,9 +41,11 @@ const TweetHeader: FC<{ tweet: Tweet }> = ({ tweet }) => {
             <div
               className={clsx(
                 s.authorVerified,
-                // For some reason `is_blue_verified` is always false, and Twitter's own embed
-                // does the same thing so everyone is blue here!
-                tweet.user.is_blue_verified ? s.verifiedBlue : s.verifiedBlue
+                // For some reason `is_blue_verified` is always false, so we use the existence
+                // of `verified_type` to determine if the account is blue verified.
+                // `verified_type` can be something like "government", a blue user doesn't have it.
+                tweet.user.verified &&
+                  (tweet.user.verified_type ? s.verifiedOld : s.verifiedBlue)
               )}
             >
               <svg

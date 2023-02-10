@@ -43,6 +43,7 @@ export interface TweetUser {
   profile_image_url_https: string
   screen_name: string
   verified: boolean
+  verified_type: string
   is_blue_verified: boolean
 }
 
@@ -200,11 +201,35 @@ function twitterLabsEnabled(expansions: any) {
 }
 
 export async function fetchTweet(id: string): Promise<Tweet | undefined> {
-  const res = await fetch(`${SYNDICATION_URL}/tweet-result?id=${id}&lang=en`)
+  const url = new URL(`${SYNDICATION_URL}/tweet-result`)
+
+  url.searchParams.set('id', id)
+  url.searchParams.set('lang', 'en')
+  url.searchParams.set(
+    'features',
+    [
+      'tfw_timeline_list:',
+      'tfw_follower_count_sunset:true',
+      'tfw_tweet_edit_backend:on',
+      'tfw_refsrc_session:on',
+      'tfw_show_business_verified_badge:on',
+      'tfw_mixed_media_15897:treatment',
+      'tfw_experiments_cookie_expiration:1209600',
+      'tfw_duplicate_scribes_to_settings:on',
+      'tfw_video_hls_dynamic_manifests_15082:true_bitrate',
+      'tfw_show_blue_verified_badge:on',
+      'tfw_legacy_timeline_sunset:true',
+      'tfw_show_gov_verified_badge:on',
+      'tfw_show_business_affiliate_badge:on',
+      'tfw_tweet_edit_frontend:on',
+    ].join(';')
+  )
+
+  const res = await fetch(url)
 
   console.log(
     'LOG',
-    `${SYNDICATION_URL}/tweet-result?id=${id}&lang=en`,
+    url.toString(),
     res.status,
     Object.fromEntries(res.headers.entries())
   )

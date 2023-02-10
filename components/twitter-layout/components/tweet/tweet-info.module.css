@@ -1,7 +1,7 @@
 .info {
   display: flex;
   align-items: center;
-  color: rgb(83, 100, 113);
+  color: var(--tweet-font-color-secondary);
   margin-top: 0.125rem;
   font-size: 0.9375rem;
   line-height: 1.25rem;
@@ -31,7 +31,7 @@
   transition-duration: 0.2s;
 }
 .infoLink:hover {
-  background-color: rgba(0, 111, 214, 0.1);
+  background-color: var(--tweet-color-blue-secondary-hover);
 }
 .infoIcon {
   color: inherit;
@@ -40,5 +40,5 @@
   user-select: none;
 }
 .infoLink:hover > .infoIcon {
-  color: rgb(0, 111, 214);
+  color: var(--tweet-color-blue-secondary);
 }

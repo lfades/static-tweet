@@ -1,37 +1,25 @@
 .theme {
-  --colors-blue: #0c00ff;
-  --colors-purple: #be00ff;
-
-  --accents-1: #fafafa;
-  --accents-2: #eaeaea;
-  --accents-3: #999999;
-  --accents-4: #888888;
-  --accents-5: #666666;
-
-  --bg-color: #fff;
-  --link-color: var(--colors-blue);
-  --poll-bar-color: var(--colors-blue);
-  --inline-code-color: var(--colors-purple);
-  --code-color: #9efeff;
-  --code-bg-color: #1e1e3f;
-
-  --text-margin: 1.25rem 0;
-  --container-margin: 1.5rem 0;
-  --poll-margin: 1.5rem 1rem;
-  --heading-margin-top: 3.5rem;
-  --heading-margin-bottom: 2rem;
-  --li-margin: 0 0 0.5rem 0;
-
-  /* Embedded tweet */
-  --tweet-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
+  --tweet-skeleton-gradient: linear-gradient(
+    270deg,
+    #fafafa,
+    #eaeaea,
+    #eaeaea,
+    #fafafa
+  );
+  --tweet-container-margin: 1.5rem 0;
+  --tweet-border: 1px solid rgb(207, 217, 222);
+  --tweet-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
   --tweet-font-color: rgb(15, 20, 25);
+  --tweet-font-color-secondary: rgb(83, 100, 113);
   --tweet-bg-color: #fff;
   --tweet-bg-color-hover: rgb(247, 249, 249);
-  --tweet-border: 1px solid rgb(207, 217, 222);
-  --tweet-avatar-border: none;
-  --tweet-link-color: #2b7bb9;
-  --tweet-link-color-hover: #3b94d9;
-  --tweet-color-gray: #697882;
-  --tweet-color-red: #e02460;
+  --tweet-color-blue-primary: rgb(29, 155, 240);
+  --tweet-color-blue-secondary: rgb(0, 111, 214);
+  --tweet-color-blue-secondary-hover: rgba(0, 111, 214, 0.1);
+  --tweet-color-red-primary: rgb(249, 24, 128);
+  --tweet-color-red-primary-hover: rgba(249, 24, 128, 0.1);
+  --tweet-twitter-icon-color: var(--tweet-color-blue-primary);
+  --tweet-verified-old-color: rgb(130, 154, 171);
+  --tweet-verified-blue-color: var(--tweet-color-blue-primary);
 }

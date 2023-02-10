@@ -4,11 +4,11 @@
   overflow: hidden;
   border: var(--tweet-border);
   border-radius: 12px;
-  margin: var(--container-margin);
+  margin: var(--tweet-container-margin);
   box-sizing: border-box;
   /* Base font styles */
   color: var(--tweet-font-color);
-  font: var(--tweet-font);
+  font: var(--tweet-font-family);
   font-weight: 400;
 }
 .article {

@@ -63,10 +63,10 @@
   vertical-align: text-bottom;
 }
 .verifiedOld {
-  color: rgb(130, 154, 171);
+  color: var(--tweet-verified-old-color);
 }
 .verifiedBlue {
-  color: rgb(29, 155, 240);
+  color: var(--tweet-verified-blue-color);
 }
 .authorMeta {
   display: flex;
@@ -75,12 +75,12 @@
   display: flex;
 }
 .username {
-  color: rgb(83, 100, 113);
+  color: var(--tweet-font-color-secondary);
   text-decoration: none;
   text-overflow: ellipsis;
 }
 .follow {
-  color: rgb(0, 111, 214);
+  color: var(--tweet-color-blue-secondary);
   text-decoration: none;
   font-weight: 700;
 }
@@ -98,7 +98,7 @@
 .twitterIcon {
   width: 25px;
   height: 25px;
-  color: rgb(29, 155, 240);
+  color: var(--tweet-twitter-icon-color);
   fill: currentColor;
   user-select: none;
 }

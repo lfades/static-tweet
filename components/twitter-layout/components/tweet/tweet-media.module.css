@@ -1,6 +1,6 @@
 .root {
   margin-top: 0.75rem;
-  border: 1px solid rgb(207, 217, 222);
+  border: var(--tweet-border);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -56,7 +56,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(29, 155, 240);
+  background-color: var(--tweet-color-blue-primary);
   transition-property: background-color;
   transition-duration: 0.2s;
   border: 4px solid #fff;

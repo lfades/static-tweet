@@ -4,7 +4,7 @@
 }
 .link {
   text-decoration: none;
-  color: rgb(0, 111, 214);
+  color: var(--tweet-color-blue-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,11 +15,11 @@
   transition-property: background-color;
   transition-duration: 0.2s;
   padding: 0 1rem;
-  border: 1px solid rgb(207, 217, 222);
+  border: var(--tweet-border);
   border-radius: 9999px;
 }
 .link:hover {
-  background-color: rgba(0, 111, 214, 0.1);
+  background-color: var(--tweet-color-blue-secondary-hover);
 }
 .text {
   font-weight: 700;

@@ -4,7 +4,7 @@
   display: inline-flex;
 }
 .link {
-  color: rgb(0, 111, 214);
+  color: var(--tweet-color-blue-secondary);
   text-decoration: none;
   cursor: pointer;
 }

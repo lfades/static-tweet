@@ -1,6 +1,6 @@
 .root {
   text-decoration: none;
-  color: rgb(83, 100, 113);
+  color: var(--tweet-font-color-secondary);
   font-size: 0.9375rem;
   line-height: 1.25rem;
   margin-bottom: 0.25rem;
