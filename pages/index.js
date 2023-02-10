@@ -1,17 +1,10 @@
 import fetchTweetAst from '../lib/fetchTweetAst'
-import components from '../components/twitter-layout/components'
+import { P, Code, Ul, Li, H2, Hr } from '../components/landing/core'
 import Page from '../components/landing/page'
 import A from '../components/landing/anchor'
 import Tweet from '../components/landing/tweet'
 import RandomTweet from '../components/landing/random-tweet'
 import { Score, Gauge } from '../components/landing/lighthouse-score'
-
-const P = components.p
-const Code = components.code
-const Ul = components.ul
-const Li = components.li
-const H2 = components.h2
-const Hr = components.hr
 
 export async function getStaticProps() {
   const tweet = await fetchTweetAst('1249937011068129280')

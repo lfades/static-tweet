@@ -32,7 +32,7 @@
 
 .heading {
   font-weight: 600;
-  margin: var(--heading-margin-top) 0 var(--heading-margin-bottom) 0;
+  margin: var(--heading-margin);
 }
 .h1 {
   font-size: 2rem;
