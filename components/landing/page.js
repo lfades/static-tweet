@@ -50,7 +50,7 @@ export default function Page({ children, title, description }) {
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          content="https://static-tweet.now.sh/assets/twitter-card.png"
+          content="https://static-tweet.vercel.app/assets/twitter-card.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>

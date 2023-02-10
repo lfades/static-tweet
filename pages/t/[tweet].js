@@ -1,4 +1,4 @@
-import fetchTweetAst from '../../lib/fetchTweetAst'
+import { fetchTweet } from '../lib/twitter/api'
 import TweetPage from '../../components/tweet-page'
 import styles from '../../components/dark-layout/dark.module.css'
 
@@ -19,7 +19,7 @@ export async function getStaticProps({ params }) {
   }
 
   try {
-    const tweet = await fetchTweetAst(tweetId)
+    const tweet = await fetchTweet(tweetId)
     return tweet ? { props: { tweet } } : { notFound: true }
   } catch (error) {
     // The Twitter API most likely died

@@ -1,4 +1,4 @@
-import fetchTweetAst from '../lib/fetchTweetAst'
+import { fetchTweet } from '../lib/twitter/api'
 import { P, Code, Ul, Li, H2, Hr } from '../components/landing/core'
 import Page from '../components/landing/page'
 import A from '../components/landing/anchor'
@@ -7,7 +7,7 @@ import RandomTweet from '../components/landing/random-tweet'
 import { Score, Gauge } from '../components/landing/lighthouse-score'
 
 export async function getStaticProps() {
-  const tweet = await fetchTweetAst('1249937011068129280')
+  const tweet = await fetchTweet('1249937011068129280')
   return { props: { tweet } }
 }
 
@@ -61,7 +61,7 @@ export default function Index({ tweet }) {
       <P>
         When you visit{' '}
         <Code className="inline">
-          `https://static-tweet.now.sh/<b>{`{tweetId}`}</b>`
+          `https://static-tweet.vercel.app/<b>{`{tweetId}`}</b>`
         </Code>{' '}
         you’ll notice that if the tweet has never been rendered before, you’ll
         get a <strong>skeleton page</strong>.
