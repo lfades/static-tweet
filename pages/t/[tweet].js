@@ -1,4 +1,4 @@
-import { fetchTweet } from '../lib/twitter/api'
+import { fetchTweet } from 'lib/twitter/api'
 import TweetPage from '../../components/tweet-page'
 import styles from '../../components/dark-layout/dark.module.css'
 
