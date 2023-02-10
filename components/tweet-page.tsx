@@ -1,15 +1,17 @@
+import type { FC } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import clsx from 'clsx'
-import A from './landing/anchor'
-import Node from './html/node'
-import components from './twitter-layout/components'
+import type { Tweet as TweetType } from 'lib/twitter/api'
 import TweetSkeleton from './twitter-layout/tweet-skeleton'
 import TweetMeta from './tweet-meta'
-import styles from './tweet-page.module.css'
 import Tweet from './twitter-layout/components/tweet/tweet'
+import A from './landing/anchor'
+import styles from './tweet-page.module.css'
 
-export default function TweetPage({ ast, className }) {
+const TweetPage: FC<{ tweet: TweetType; className: string }> = ({
+  tweet,
+  className,
+}) => {
   const { isFallback } = useRouter()
 
   return (
@@ -17,7 +19,7 @@ export default function TweetPage({ ast, className }) {
       <TweetMeta />
 
       <main className={styles.main}>
-        {isFallback ? <TweetSkeleton /> : <Tweet data={ast} />}
+        {isFallback ? <TweetSkeleton /> : <Tweet data={tweet} />}
       </main>
 
       <footer className={styles.footer}>
@@ -31,3 +33,5 @@ export default function TweetPage({ ast, className }) {
     </div>
   )
 }
+
+export default TweetPage

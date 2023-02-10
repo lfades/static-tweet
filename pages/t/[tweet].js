@@ -12,15 +12,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { tweet } = params
+  const tweetId = params.tweet
 
-  if (tweet.length > 40 || !TWEET_ID.test(tweet)) {
+  if (tweetId.length > 40 || !TWEET_ID.test(tweetId)) {
     return { notFound: true }
   }
 
   try {
-    const ast = await fetchTweetAst(tweet)
-    return ast ? { props: { ast } } : { notFound: true }
+    const tweet = await fetchTweetAst(tweetId)
+    return tweet ? { props: { tweet } } : { notFound: true }
   } catch (error) {
     // The Twitter API most likely died
     console.error(error)
@@ -28,6 +28,6 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default function Page({ date, ast }) {
-  return <TweetPage className={styles.theme} ast={ast} />
+export default function Page({ tweet }) {
+  return <TweetPage className={styles.theme} tweet={tweet} />
 }
