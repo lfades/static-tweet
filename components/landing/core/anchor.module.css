@@ -1,0 +1,8 @@
+.root {
+  color: var(--tweet-color-blue-secondary);
+  text-decoration: none;
+}
+.root:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+}

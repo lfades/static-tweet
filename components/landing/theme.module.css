@@ -1,0 +1,21 @@
+.theme {
+  --text-margin: 2rem 0;
+  --heading-margin: 4rem 0 2.5rem 0;
+  --li-margin: 0 0 1rem 0;
+}
+.light {
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+  --accents-3: #999999;
+  --accents-4: #888888;
+  --accents-5: #666666;
+  --inline-code-color: #be00ff;
+}
+.dark {
+  --accents-1: #111111;
+  --accents-2: #333333;
+  --accents-3: #444444;
+  --accents-4: #666666;
+  --accents-5: #888888;
+  --inline-code-color: #e086ff;
+}

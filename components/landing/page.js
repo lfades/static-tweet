@@ -1,8 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
+import clsx from 'clsx'
 import twitterTheme from '../twitter-layout/twitter.module.css'
 import darkTheme from '../dark-layout/dark.module.css'
-import styles from './page.module.css'
+import landingTheme from '../landing/theme.module.css'
+import s from './page.module.css'
 
 const Theme = React.createContext()
 
@@ -17,12 +19,16 @@ function PageContent({ title, children }) {
   const [theme] = useTheme()
   return (
     <div
-      className={`${styles.page} ${
-        theme === 'light' ? twitterTheme.theme : darkTheme.theme
-      } ${styles.theme}`}
+      className={clsx(
+        s.page,
+        landingTheme.theme,
+        theme === 'light'
+          ? [twitterTheme.theme, landingTheme.light]
+          : [darkTheme.theme, landingTheme.dark]
+      )}
     >
-      <main className={styles.main}>
-        <article className={styles.article}>
+      <main className={s.main}>
+        <article className={s.article}>
           <header>
             <h1>{title}</h1>
           </header>
@@ -44,7 +50,7 @@ export default function Page({ children, title, description }) {
         <meta property="og:description" content={description} />
         <meta
           property="og:image"
-          content="https://static-tweet.now.sh/assets/twitter-card.png"
+          content="https://static-tweet.vercel.app/assets/twitter-card.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>

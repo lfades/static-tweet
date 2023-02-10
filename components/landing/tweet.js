@@ -1,36 +1,24 @@
-import Node from '../html/node'
-import TweetSkeleton from '../twitter-layout/tweet-skeleton'
-import components from '../twitter-layout/components'
+import clsx from 'clsx'
 import twitterTheme from '../twitter-layout/twitter.module.css'
 import darkTheme from '../dark-layout/dark.module.css'
-import styles from './tweet.module.css'
+import TweetSkeleton from '../twitter-layout/tweet-skeleton'
+import TweetComponent from '../twitter-layout/tweet'
+import Button from './button'
 import { useTheme } from './page'
+import s from './tweet.module.css'
 
-const cn = (arr) => arr.filter(Boolean).join(' ')
-
-const Tweet = ({ ast, skeleton }) => {
+const Tweet = ({ data, skeleton }) => {
   const [theme, setTheme] = useTheme()
   const isDark = theme === 'dark'
 
   return (
     <div
-      className={cn([
-        styles.tweet,
-        isDark ? darkTheme.theme : twitterTheme.theme,
-      ])}
+      className={clsx([s.root, isDark ? darkTheme.theme : twitterTheme.theme])}
     >
-      {skeleton ? (
-        <TweetSkeleton />
-      ) : (
-        <Node components={components} node={ast[0]} />
-      )}
-      <button
-        className={cn([styles.button, isDark && styles['dark-button']])}
-        type="button"
-        onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      >
+      {skeleton ? <TweetSkeleton /> : <TweetComponent data={data} />}
+      <Button onClick={() => setTheme(isDark ? 'light' : 'dark')}>
         Switch theme
-      </button>
+      </Button>
     </div>
   )
 }

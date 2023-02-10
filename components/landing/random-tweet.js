@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import A from './anchor'
+import { A } from './core'
 import styles from './random-tweet.module.css'
 
-const APP_URL = 'https://static-tweet.now.sh'
+const APP_URL = 'https://static-tweet.vercel.app'
 const cn = (arr) => arr.filter(Boolean).join(' ')
 
 function getRandomId(id, tweets) {
@@ -52,11 +52,9 @@ export default function RandomTweet({ initialId }) {
 
   return (
     <>
-      <Link href="/[tweet]" as={`/${id}`} passHref>
-        <A blank={false}>
-          {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
-        </A>
-      </Link>
+      <A href={`/${id}`}>
+        {APP_URL}/<span className={success ? styles.id : null}>{id}</span>
+      </A>
       <div className={styles['random-tweet']}>
         <button
           className={cn([

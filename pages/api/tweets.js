@@ -16,20 +16,19 @@ export default async function getTweets(req, res) {
   }
 
   const response = await fetch(
-    `https://api.twitter.com/1.1/search/tweets.json?q=${QUERY}&lang=${LANG}&count=50`,
+    `https://api.twitter.com/2/tweets/search/recent?query=${QUERY}&max_results=30`,
     {
       headers: {
-        authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
+        Authorization: `Bearer ${process.env.TWITTER_API_TOKEN}`,
       },
     }
   )
 
   if (response.ok) {
-    const { statuses } = await response.json()
-    // Cache the Twitter response for 3 seconds, to avoid hitting the Twitter API limits
-    // of 450 requests every 15 minutes (with app auth)
-    res.setHeader('Cache-Control', 's-maxage=3, stale-while-revalidate')
-    res.status(200).json({ tweets: statuses.map((tweet) => tweet.id_str) })
+    const { data } = await response.json()
+    // Cache the Twitter response for 1 hour, to avoid hitting Twitter API limits
+    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate')
+    res.status(200).json({ tweets: data.map((tweet) => tweet.id) })
   } else {
     res.status(400).json({
       errors: [
