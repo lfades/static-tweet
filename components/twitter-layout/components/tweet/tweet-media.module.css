@@ -3,13 +3,32 @@
   border: 1px solid rgb(207, 217, 222);
   border-radius: 12px;
   overflow: hidden;
+  position: relative;
 }
-.media {
-  display: flex;
+.mediaWrapper {
+  display: grid;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
   height: 100%;
+  width: 100%;
+}
+.grid2Columns {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid3 > a:first-child {
+  grid-row: span 2;
+}
+.grid2x2 {
+  grid-template-rows: repeat(2, 1fr);
+}
+.mediaLink {
+  position: relative;
+  height: 100%;
+  width: 100%;
   text-decoration: none;
   outline-style: none;
-  position: relative;
 }
 .skeleton {
   padding-bottom: 56.3542%;
