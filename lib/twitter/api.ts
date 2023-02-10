@@ -3,19 +3,19 @@ const SYNDICATION_URL = 'https://cdn.syndication.twimg.com'
 
 export type Indices = [number, number]
 
-export interface Hashtag {
+export interface HashtagEntity {
   indices: Indices
   text: string
 }
 
-export interface UserMention {
+export interface UserMentionEntity {
   id_str: string
   indices: Indices
   name: string
   screen_name: string
 }
 
-export interface Media {
+export interface MediaEntity {
   display_url: string
   expanded_url: string
   indices: Indices
@@ -30,11 +30,11 @@ export interface UrlEntity {
 }
 
 export interface TweetEntities {
-  hashtags: Hashtag[]
+  hashtags: HashtagEntity[]
   urls: UrlEntity[]
-  user_mentions: UserMention[]
+  user_mentions: UserMentionEntity[]
   symbols: { text: string }[]
-  media?: Media[]
+  media?: MediaEntity[]
 }
 
 export interface TweetUser {

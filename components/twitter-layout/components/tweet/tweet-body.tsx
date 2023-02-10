@@ -2,10 +2,10 @@ import type { FC } from 'react'
 import type {
   Indices,
   Tweet,
-  Hashtag as THashtag,
-  UserMention,
+  HashtagEntity,
+  UserMentionEntity,
   UrlEntity,
-  Media,
+  MediaEntity,
 } from 'lib/twitter/api'
 import { Hashtag, Mention, TwitterLink } from '../twitter'
 import s from './tweet-body.module.css'
@@ -17,14 +17,14 @@ type TextEntity = {
 
 type Entity =
   | TextEntity
-  | (THashtag & { type: 'hashtag' })
-  | (UserMention & { type: 'mention' })
+  | (HashtagEntity & { type: 'hashtag' })
+  | (UserMentionEntity & { type: 'mention' })
   | (UrlEntity & { type: 'url' })
-  | (Media & { type: 'media' })
+  | (MediaEntity & { type: 'media' })
 
 function addEntities(
   result: Entity[],
-  entities: (THashtag | UserMention | Media)[],
+  entities: (HashtagEntity | UserMentionEntity | MediaEntity)[],
   type: Entity['type']
 ) {
   for (const entity of entities) {
