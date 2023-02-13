@@ -1,12 +1,12 @@
 # Static Tweet
 
-Completely customizable static tweet for Next.js applications.
+Embedded and static tweet for Next.js applications.
 
 ## Demo
 
-https://static-tweet.vercel.app/1238918791947522049 (light mode)
+https://static-tweet.vercel.app/dark/1238918791947522049 - Dark mode, using the `app` directory.
 
-https://static-tweet.vercel.app/t/1238918791947522049 (dark mode)
+https://static-tweet.vercel.app/1238918791947522049 - Light mode, using `pages`.
 
 ## How to use
 
@@ -18,6 +18,4 @@ pnpm create-next-app --example https://github.com/lfades/static-tweet/tree/main 
 
 ## Add static tweets to your app
 
-Currently, there's no package to do this, however you're welcome to copy the files and add it to your project! I'll get working on a package soon.
-
-For an example, take a look at the following blog: [rauchg/blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js)
+This example uses [next-tweet](https://github.com/lfades/next-tweet) to render the tweets, you can see it in usage in [Rauchg's blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js).
