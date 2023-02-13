@@ -4,9 +4,8 @@ specifiers:
   '@types/node': 18.13.0
   '@types/react': ^18.0.28
   clsx: ^1.2.1
-  date-fns: ^2.29.3
   next: ^13.1.6
-  next-tweet: ^0.2.0
+  next-tweet: ^0.2.1
   prettier: ^2.8.4
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -14,9 +13,8 @@ specifiers:
 
 dependencies:
   clsx: 1.2.1
-  date-fns: 2.29.3
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
-  next-tweet: 0.2.0_3vryta7zmbcsw4rrqf4axjqggm
+  next-tweet: 0.2.1_3vryta7zmbcsw4rrqf4axjqggm
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -214,8 +212,8 @@ packages:
     hasBin: true
     dev: false
 
-  /next-tweet/0.2.0_3vryta7zmbcsw4rrqf4axjqggm:
-    resolution: {integrity: sha512-L2osBNdzO4wt1++7NXwrHBzDKhZLhu4sD6OlRzzZheF8ST2OftXFzrtvjWjAKajmqfc5g/JcNbS7Yc9gDwZVrw==}
+  /next-tweet/0.2.1_3vryta7zmbcsw4rrqf4axjqggm:
+    resolution: {integrity: sha512-tep5PExpRrW7YYev/7ugqCzSW7h94S0iMHtO/WPkngX934Yl4fThc51asoAZ/lZKqMI3wzww6f43U/8qFNUa7w==}
     peerDependencies:
       next: '>= 13.0.0'
       react: '>= 18.0.0'

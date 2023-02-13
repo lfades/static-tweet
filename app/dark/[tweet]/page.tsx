@@ -1,6 +1,7 @@
 import { NextTweet } from 'next-tweet'
 import clsx from 'clsx'
 import theme from 'next-tweet/theme.module.css'
+import { A } from '../../../components/landing/core'
 import s from './page.module.css'
 
 export const revalidate = 60
@@ -16,7 +17,9 @@ export default async function Page({ params }: { params: { tweet: string } }) {
         <NextTweet id={params.tweet} priority />
       </main>
       <footer className={s.footer}>
-        <p>🤯 This tweet was statically generated.</p>
+        <p>
+          🤯 This tweet was statically generated. <A href="/">See how</A>
+        </p>
       </footer>
     </div>
   )

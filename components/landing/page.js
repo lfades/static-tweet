@@ -1,8 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import clsx from 'clsx'
-import twitterTheme from '../twitter-layout/twitter.module.css'
-import darkTheme from '../dark-layout/dark.module.css'
+import tweetTheme from 'next-tweet/theme.module.css'
 import landingTheme from '../landing/theme.module.css'
 import s from './page.module.css'
 
@@ -23,8 +22,8 @@ function PageContent({ title, children }) {
         s.page,
         landingTheme.theme,
         theme === 'light'
-          ? [twitterTheme.theme, landingTheme.light]
-          : [darkTheme.theme, landingTheme.dark]
+          ? [tweetTheme.light, landingTheme.light]
+          : [tweetTheme.dark, landingTheme.dark]
       )}
     >
       <main className={s.main}>

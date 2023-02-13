@@ -1,4 +1,4 @@
-import { fetchTweet } from '../lib/twitter/api'
+import { getTweet } from 'next-tweet/api'
 import { A, P, Code, Ul, Li, H2, Hr } from '../components/landing/core'
 import Page from '../components/landing/page'
 import Tweet from '../components/landing/tweet'
@@ -6,7 +6,7 @@ import RandomTweet from '../components/landing/random-tweet'
 import { Score, Gauge } from '../components/landing/lighthouse-score'
 
 export async function getStaticProps() {
-  const tweet = await fetchTweet('1249937011068129280')
+  const tweet = await getTweet('1249937011068129280')
   return { props: { tweet } }
 }
 
