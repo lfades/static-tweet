@@ -1,6 +1,6 @@
-import { fetchTweet } from 'lib/twitter/api'
-import TweetPage from '../../components/tweet-page'
-import styles from '../../components/dark-layout/dark.module.css'
+import { getTweet, type Tweet } from 'next-tweet/api'
+import theme from 'next-tweet/theme.module.css'
+import TweetPage from '../components/tweet-page'
 
 // Regex to test a valid username, you should also test for a max length of 15, but we're not using
 // the user to get the tweet
@@ -11,7 +11,11 @@ export async function getStaticPaths() {
   return { paths: [], fallback: true }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({
+  params,
+}: {
+  params: { tweet: string }
+}) {
   const tweetId = params.tweet
 
   if (tweetId.length > 40 || !TWEET_ID.test(tweetId)) {
@@ -19,15 +23,14 @@ export async function getStaticProps({ params }) {
   }
 
   try {
-    const tweet = await fetchTweet(tweetId)
+    const tweet = await getTweet(tweetId)
     return tweet ? { props: { tweet } } : { notFound: true }
   } catch (error) {
-    // The Twitter API most likely died
     console.error(error)
     return { notFound: true }
   }
 }
 
-export default function Page({ tweet }) {
-  return <TweetPage className={styles.theme} tweet={tweet} />
+export default function Page({ tweet }: { tweet: Tweet }) {
+  return <TweetPage tweet={tweet} className={theme.light} />
 }
