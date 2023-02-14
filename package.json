@@ -16,7 +16,7 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "next": "^13.1.6",
-    "next-tweet": "^0.2.1",
+    "next-tweet": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

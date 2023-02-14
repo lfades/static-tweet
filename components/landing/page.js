@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import clsx from 'clsx'
-import tweetTheme from 'next-tweet/theme.module.css'
 import landingTheme from '../landing/theme.module.css'
 import s from './page.module.css'
 
@@ -21,10 +20,9 @@ function PageContent({ title, children }) {
       className={clsx(
         s.page,
         landingTheme.theme,
-        theme === 'light'
-          ? [tweetTheme.light, landingTheme.light]
-          : [tweetTheme.dark, landingTheme.dark]
+        theme === 'light' ? [landingTheme.light] : [landingTheme.dark]
       )}
+      data-theme={theme === 'light' ? 'light' : 'dark'}
     >
       <main className={s.main}>
         <article className={s.article}>

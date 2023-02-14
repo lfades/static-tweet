@@ -4,7 +4,7 @@ import '../styles/base.css'
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => (
   <html>
     <head />
-    <body>{children}</body>
+    <body data-theme="dark">{children}</body>
   </html>
 )
 

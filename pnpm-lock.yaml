@@ -5,7 +5,7 @@ specifiers:
   '@types/react': ^18.0.28
   clsx: ^1.2.1
   next: ^13.1.6
-  next-tweet: ^0.2.1
+  next-tweet: ^0.3.0
   prettier: ^2.8.4
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -14,7 +14,7 @@ specifiers:
 dependencies:
   clsx: 1.2.1
   next: 13.1.6_biqbaboplfbrettd7655fr4n2y
-  next-tweet: 0.2.1_3vryta7zmbcsw4rrqf4axjqggm
+  next-tweet: 0.3.0_3vryta7zmbcsw4rrqf4axjqggm
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -173,8 +173,8 @@ packages:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
 
-  /caniuse-lite/1.0.30001451:
-    resolution: {integrity: sha512-XY7UbUpGRatZzoRft//5xOa69/1iGJRBlrieH6QYrkKLIFn3m7OVEJ81dSrKoy2BnKsdbX5cLrOispZNYo9v2w==}
+  /caniuse-lite/1.0.30001452:
+    resolution: {integrity: sha512-Lkp0vFjMkBB3GTpLR8zk4NwW5EdRdnitwYJHDOOKIU85x4ckYCPQ+9WlVvSVClHxVReefkUMtWZH2l9KGlD51w==}
     dev: false
 
   /client-only/0.0.1:
@@ -212,8 +212,8 @@ packages:
     hasBin: true
     dev: false
 
-  /next-tweet/0.2.1_3vryta7zmbcsw4rrqf4axjqggm:
-    resolution: {integrity: sha512-tep5PExpRrW7YYev/7ugqCzSW7h94S0iMHtO/WPkngX934Yl4fThc51asoAZ/lZKqMI3wzww6f43U/8qFNUa7w==}
+  /next-tweet/0.3.0_3vryta7zmbcsw4rrqf4axjqggm:
+    resolution: {integrity: sha512-S/9wjgWhytBuAYBaorOeMNan9a3NIgJH3Td7kFhhEyIVLJYQFdtTKMxnHHqoSVsri/GN+TV27eqWwUTw3sxXhw==}
     peerDependencies:
       next: '>= 13.0.0'
       react: '>= 18.0.0'
@@ -246,7 +246,7 @@ packages:
     dependencies:
       '@next/env': 13.1.6
       '@swc/helpers': 0.4.14
-      caniuse-lite: 1.0.30001451
+      caniuse-lite: 1.0.30001452
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

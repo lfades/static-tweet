@@ -1,6 +1,4 @@
 import { NextTweet } from 'next-tweet'
-import clsx from 'clsx'
-import theme from 'next-tweet/theme.module.css'
 import { A } from '../../../components/landing/core'
 import s from './page.module.css'
 
@@ -11,7 +9,7 @@ export default async function Page({ params }: { params: { tweet: string } }) {
   if (params.tweet === '%5Btweet%5D') return null
 
   return (
-    <div className={clsx(s.root, theme.dark)}>
+    <div className={s.root}>
       <main className={s.main}>
         {/* @ts-ignore: Async components are valid in the app directory */}
         <NextTweet id={params.tweet} priority />
