@@ -5,5 +5,6 @@ module.exports = {
   },
   experimental: {
     appDir: true,
+    fetchCache: true,
   },
 }
