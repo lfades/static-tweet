@@ -24,21 +24,18 @@ export async function generateMetadata({ params }: Props) {
   return { title: `${text}${username}` }
 }
 
-export default async function Page({ params }: Props) {
-  // TODO: Figure out why Next.js sends this value at build time
-  if (params.tweet === '%5Btweet%5D') return null
+const Page = async ({ params }: Props) => (
+  <div className={s.root}>
+    <main className={s.main}>
+      {/* @ts-ignore: Async components are valid in the app directory */}
+      <NextTweet id={params.tweet} priority />
+    </main>
+    <footer className={s.footer}>
+      <p>
+        🤯 This tweet was statically generated. <A href="/">See how</A>
+      </p>
+    </footer>
+  </div>
+)
 
-  return (
-    <div className={s.root}>
-      <main className={s.main}>
-        {/* @ts-ignore: Async components are valid in the app directory */}
-        <NextTweet id={params.tweet} priority />
-      </main>
-      <footer className={s.footer}>
-        <p>
-          🤯 This tweet was statically generated. <A href="/">See how</A>
-        </p>
-      </footer>
-    </div>
-  )
-}
+export default Page
