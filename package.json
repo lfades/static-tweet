@@ -15,13 +15,13 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "next": "13.1.7-canary.30",
-    "next-tweet": "^0.4.0",
+    "next": "13.2.3",
+    "next-tweet": "^0.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.14.1",
+    "@types/node": "18.14.6",
     "@types/react": "^18.0.28",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5"
