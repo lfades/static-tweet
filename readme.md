@@ -18,4 +18,4 @@ pnpm create-next-app --example https://github.com/lfades/static-tweet/tree/main 
 
 ## Add static tweets to your app
 
-This example uses [next-tweet](https://github.com/lfades/next-tweet) to render the tweets, you can see it in usage in [Rauchg's blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js).
+This example uses [next-tweet](https://github.com/vercel-labs/next-tweet) to render the tweets, you can see it in usage in [Rauchg's blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js).
