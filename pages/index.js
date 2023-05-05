@@ -92,7 +92,7 @@ export default function Index({ tweet }) {
         defined in the Next.js page called{' '}
         <Code className="inline">`pages/[tweet].js`</Code> (
         <A
-          href="https://github.com/lfades/static-tweet/blob/main/pages/%5Btweet%5D.js"
+          href="https://github.com/lfades/static-tweet/blob/main/pages/%5Btweet%5D.tsx"
           blank
         >
           source
