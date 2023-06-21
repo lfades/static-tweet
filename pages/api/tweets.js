@@ -30,6 +30,17 @@ export default async function getTweets(req, res) {
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate')
     res.status(200).json({ tweets: data.map((tweet) => tweet.id) })
   } else {
+    // The Twitter API key has reached the monthly limit 🥲
+    if (response.status === 403) {
+      return res.status(403).json({
+        errors: [
+          {
+            message: `Our Twitter API key has reached the monthly limit 🥲. Get a tweet id from twitter.com instead.`,
+          },
+        ],
+      })
+    }
+
     res.status(400).json({
       errors: [
         {
