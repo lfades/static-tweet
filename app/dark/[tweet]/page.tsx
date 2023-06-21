@@ -1,6 +1,8 @@
-import { NextTweet } from 'next-tweet'
-import { getTweet } from 'next-tweet/api'
-import { A } from '../../../components/landing/core'
+import { Tweet } from 'react-tweet'
+import { getTweet } from 'react-tweet/api'
+import clsx from 'clsx'
+import { A } from 'components/landing/core'
+import { components } from 'components/tweet-components'
 import s from './page.module.css'
 
 type Props = {
@@ -25,10 +27,9 @@ export async function generateMetadata({ params }: Props) {
 }
 
 const Page = async ({ params }: Props) => (
-  <div className={s.root}>
+  <div data-theme="dark" className={clsx(s.root, 'react-tweet-theme')}>
     <main className={s.main}>
-      {/* @ts-ignore: Async components are valid in the app directory */}
-      <NextTweet id={params.tweet} priority />
+      <Tweet id={params.tweet} components={components} />
     </main>
     <footer className={s.footer}>
       <p>

@@ -1,4 +1,4 @@
-import { TweetSkeleton, EmbeddedTweet } from 'next-tweet'
+import { TweetSkeleton, EmbeddedTweet } from 'react-tweet'
 import Button from './button'
 import { useTheme } from './page'
 import s from './tweet.module.css'

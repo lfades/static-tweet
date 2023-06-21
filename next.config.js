@@ -1,8 +1,10 @@
+/** @type {import('next').NextConfig} */
 module.exports = {
+  transpilePackages: ['react-tweet'],
   images: {
-    domains: ['pbs.twimg.com', 'abs.twimg.com'],
-  },
-  experimental: {
-    appDir: true,
+    remotePatterns: [
+      { protocol: 'https', hostname: 'pbs.twimg.com' },
+      { protocol: 'https', hostname: 'abs.twimg.com' },
+    ],
   },
 }

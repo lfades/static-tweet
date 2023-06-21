@@ -16,6 +16,6 @@ To have a working copy of this project, run the following command:
 pnpm create-next-app --example https://github.com/lfades/static-tweet/tree/main static-tweet
 ```
 
-## Add static tweets to your app
+## Add tweets to your app
 
-This example uses [next-tweet](https://github.com/vercel-labs/next-tweet) to render the tweets, you can see it in usage in [Rauchg's blog](https://github.com/rauchg/blog/blob/master/pages/2020/2019-in-review.js).
+This example uses [react-tweet](https://github.com/vercel-labs/react-tweet) to render the tweets, you can see it in usage in [Rauchg's blog](<https://github.com/rauchg/blog/blob/main/app/(post)/components/tweet.tsx>).

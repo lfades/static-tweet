@@ -1,4 +1,4 @@
-import { getTweet } from 'next-tweet/api'
+import { getTweet } from 'react-tweet/api'
 import { A, P, Code, Ul, Li, H2, Hr } from '../components/landing/core'
 import Page from '../components/landing/page'
 import Tweet from '../components/landing/tweet'

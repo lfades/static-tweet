@@ -15,23 +15,26 @@ export function ThemeProvider({ theme, children }) {
 
 function PageContent({ title, children }) {
   const [theme] = useTheme()
+
   return (
-    <div
-      className={clsx(
-        s.page,
-        landingTheme.theme,
-        theme === 'light' ? [landingTheme.light] : [landingTheme.dark]
-      )}
-      data-theme={theme === 'light' ? 'light' : 'dark'}
-    >
-      <main className={s.main}>
-        <article className={s.article}>
-          <header>
-            <h1>{title}</h1>
-          </header>
-          {children}
-        </article>
-      </main>
+    <div data-theme={theme === 'light' ? 'light' : 'dark'}>
+      <div
+        className={clsx(
+          s.page,
+          landingTheme.theme,
+          theme === 'light' ? [landingTheme.light] : [landingTheme.dark],
+          'react-tweet-theme'
+        )}
+      >
+        <main className={s.main}>
+          <article className={s.article}>
+            <header>
+              <h1>{title}</h1>
+            </header>
+            {children}
+          </article>
+        </main>
+      </div>
     </div>
   )
 }
